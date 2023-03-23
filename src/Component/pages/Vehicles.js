@@ -1,11 +1,11 @@
 
-import './Cards.css';
+import './Vehicles.css';
 import CardItem from './CardItem';
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
-import CarContainer from '../components/CarContainer';
+import { Button } from './../Button';
+import CarContainer from './../../components/CarContainer';
 
-function Cards() {
+function Vehicles() {
     const [searchInput, setSearchInput] = useState("");
     const handleChange = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ function Cards() {
 
         <CarContainer></CarContainer>
 
-
+{/* 
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
@@ -85,7 +85,7 @@ function Cards() {
             />
           </ul>
         </div>
-  
+   */}
 
         <div className='cards__container2'>
         <Button
@@ -104,6 +104,6 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Vehicles;
 
 

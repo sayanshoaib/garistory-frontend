@@ -7,6 +7,8 @@ import Home from './Component/pages/Home';
 
 import SignUp from './Component/pages/SignUp';
 import Product from './Component/pages/Product';
+import Services from './Component/pages/Services';
+import Vehicles from './Component/pages/Vehicles';
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
       <Navbar/>
        <Switch>
         <Route path='/' exact component={Home}/>
-        <Route path='/product' exact component={Product}/>
+        <Route path='/entry' exact component={Product}/>
         <Route path='/signUp' exact component={SignUp}/>
+        <Route path='/services' exact component={Services}></Route>
+        <Route path='/vehicles' exact component={Vehicles}></Route>
         
        </Switch>
        <Footer/>
