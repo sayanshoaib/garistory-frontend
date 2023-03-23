@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "1011 Toyota X",
+      "city": "Dhaka",
+      "cost": "BDT 20130,000",
+      "img": "images/img-3.png",
+      "path": "/services"
+    },
+    {
+        "id": 2,
+        "name": "2015 Toyota Axio",
+        "city": "Feni",
+        "cost": "BDT 230,000",
+        "img": "images/img-6.png",
+        "path": "/services"
+      },
+
+      {
+        "id": 3,
+        "name": "2010 Mazda CX-7",
+        "city": "Daunkandi",
+        "cost": "BDT 43130,000",
+        "img": "images/img-7.png",
+        "path": "/services"
+      },
+      {
+        "id": 4,
+        "name": "2017 Honda Shuttle",
+        "city": "Comilla",
+        "cost": "BDT 33130,000",
+        "img": "images/img-7.png",
+        "path": "/services"
+      },
+
+      {
+        "id": 5,
+        "name": "2011 Toyota Premio",
+        "city": "Rajshahi",
+        "cost": "BDT 11130,000",
+        "img": "images/img-3.png",
+        "path": "/services"
+      },{
+        "id": 6,
+        "name": "2000 Toyota Corolla",
+        "city": "Dhaka",
+        "cost": "BDT 20130,000",
+        "img": "images/img-6.png",
+        "path": "/services"
+      }
+  ]

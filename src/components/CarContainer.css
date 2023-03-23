@@ -1,0 +1,10 @@
+#carContainer{
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+
+  }
