@@ -7,7 +7,7 @@ function HeroSection() {
   return (
     <div className='hero-container'>
       <video src='/videos/video-3.mp4' autoPlay loop muted />
-      <h2>Decentralized Vehicle Information System</h2>
+      <h2>Decentralized Vehicle Information Storage System</h2>
       <p>We got what you need. A trusted platform to get your vehicle Information</p>
       <div className='hero-btns'>
         <Button
