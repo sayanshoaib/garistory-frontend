@@ -20,6 +20,8 @@ function App() {
         <Route path='/entry' exact component={Product}/>
         <Route path='/signUp' exact component={SignUp}/>
         <Route path='/services' exact component={Services}></Route>
+
+        {/* helo */}
         <Route path='/vehicles' exact component={Vehicles}></Route>
         
        </Switch>

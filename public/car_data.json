@@ -47,5 +47,21 @@
         "cost": "BDT 20130,000",
         "img": "images/img-6.png",
         "path": "/services"
+      },
+      {
+        "id": 7,
+        "name": "2000 Toyota Corolla",
+        "city": "Dhaka",
+        "cost": "BDT 20130,000",
+        "img": "images/img-6.png",
+        "path": "/services"
+      },
+      {
+        "id": 8,
+        "name": "2011 Toyota Premio",
+        "city": "Rajshahi",
+        "cost": "BDT 11130,000",
+        "img": "images/img-3.png",
+        "path": "/services"
       }
   ]
