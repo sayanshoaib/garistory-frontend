@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Site
 
-Click Here: [Netlify Link](https://frabjous-mousse-143997.netlify.app).
+Click Here: [Netlify Link](https://frabjous-mousse-143997.netlify.app)
 
 ## Available Scripts
 
