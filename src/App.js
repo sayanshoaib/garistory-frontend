@@ -8,7 +8,6 @@ import SignUp from './Component/pages/SignUp';
 import Product from './Component/pages/Product';
 import Services from './Component/pages/Services';
 import Vehicles from './Component/pages/Vehicles';
-//  This is Siam's code
 
 function App() {
   return (
