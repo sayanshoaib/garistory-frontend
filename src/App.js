@@ -8,6 +8,7 @@ import SignUp from './Component/pages/SignUp';
 import Product from './Component/pages/Product';
 import Services from './Component/pages/Services';
 import Vehicles from './Component/pages/Vehicles';
+import Carz from './Component/pages/Carz';
 
 // THis is Siam's code 
 //Farhee is a badass
@@ -24,6 +25,7 @@ function App() {
         <Route path='/signUp' exact component={SignUp}/>
         <Route path='/services' exact component={Services}></Route>
         <Route path='/vehicles' exact component={Vehicles}></Route>
+        <Route path='/carz' exact component={Carz}></Route>
         {/* Farhee is a bad ass */}
        </Switch>
        <Footer/>

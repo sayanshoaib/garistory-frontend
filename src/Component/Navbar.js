@@ -78,6 +78,7 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}
         </div>
