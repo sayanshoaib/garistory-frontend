@@ -10,6 +10,7 @@ import Services from './Component/pages/Services';
 import Vehicles from './Component/pages/Vehicles';
 
 // THis is Siam's code 
+//Farhee is a badass
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='/signUp' exact component={SignUp}/>
         <Route path='/services' exact component={Services}></Route>
         <Route path='/vehicles' exact component={Vehicles}></Route>
-        {/* hjsahkjhnsak */}
+        {/* Farhee is a bad ass */}
        </Switch>
        <Footer/>
       </Router>
