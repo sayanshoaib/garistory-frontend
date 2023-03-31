@@ -10,10 +10,6 @@ import Services from './Component/pages/Services';
 import Vehicles from './Component/pages/Vehicles';
 import Carz from './Component/pages/Carz';
 
-// THis is Siam's code 
-//Farhee is a badass
-//Siam is badass too ghibli
-
 function App() {
   return (
     <div>
