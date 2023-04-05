@@ -10,7 +10,7 @@ function Home() {
     <>
       <HeroSection />
       <Vehicles />
-      <Services/>
+      <Services />
     </>
   );
 }
