@@ -98,29 +98,26 @@ function Cars() {
         Name: Hello World <br />
         Place: Earth <br />
         Payement: Bkash(XXX)
-        </h2>
-        
-        
+        </h2>        
       </div>
-      <div ></div>
-      
-          
+  
+      </div>
+
       <div className='hdata_query'>
         <h2>If you have any query write us</h2>
         <form className='query'>
+          
         <div className='input_form'>
               <input type='email' name='email' placeholder='Enter your email'></input>
+              <br />
               <input type='textarea' name='email' placeholder='Enter your query'></input>
               <br></br>
+              <br />
               <Button className='btns'buttonStyle='btn--test'buttonSize='btn--small'>Submit</Button>
 
         </div>
         </form>
 
-      </div>
-      <div ></div>
-      
-      
       </div>
       
 
