@@ -5,7 +5,6 @@ import 'react-multi-carousel/lib/styles.css';
 import Slidedata from "../Slidedata";
 import '../../App.css';
 import { productData, responsive } from "../Data";
-
 import { Button } from '../Button';
 
 
@@ -14,21 +13,19 @@ function Cars() {
         <Slidedata
           name={item.name}
           url={item.imageurl}
-          price={item.price}
-          description={item.description}
         />
       ));
         
   return (
     <div className="App">
       
-      <div><h1>Toyota Suzuki 2010</h1></div>
-      
-      
       <Carousel showDots={false} responsive={responsive}>
         {product}
-        
       </Carousel>
+
+      <div><h1>Toyota Suzuki 2010</h1></div>
+
+
       <div className='price' >
            <h2>$700,0000 BDT</h2>
       </div>
@@ -92,6 +89,21 @@ function Cars() {
            
           </div>
           </div> 
+
+
+          <div className='hdata_payment'>
+        <h2>Seller info</h2> <br />
+
+        <h2>
+        Name: Hello World <br />
+        Place: Earth <br />
+        Payement: Bkash(XXX)
+        </h2>
+        
+        
+      </div>
+      <div ></div>
+      
           
       <div className='hdata_query'>
         <h2>If you have any query write us</h2>
@@ -107,10 +119,8 @@ function Cars() {
 
       </div>
       <div ></div>
-      <div ></div>
-      <div className='hdata_payment'>
-        <h2>Seller info</h2>
-      </div>
+      
+      
       </div>
       
 
