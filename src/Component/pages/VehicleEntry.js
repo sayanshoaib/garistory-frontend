@@ -4,22 +4,25 @@ import './VehicleEntry.css';
 import { Button } from '../Button';
 
 function VehicleEntry() {
+
+  
+
   return (
     <main className='main_s'>
 
       <h1> Vehicle Information Registration</h1>
 
-      <form className='form_s'>
+      <form className='form_s' >
         <div>
 
           <div className='text_s' >
 
 
-            <div><h1>      </h1></div>
+            <div><h1> </h1></div>
             <div className='basic'>
               <div className='input'>
                 <label htmlFor='vin'>VIN</label>
-                <input classname='i' type='number' name='vin' placeholder='Enter Vehicle Identification Number'></input>
+                <input classname='i' type='number' name='vehicleID' placeholder='Enter Vehicle Identification Number'></input>
 
                 <div className='input'>
                   <label htmlFor='make'>Make</label>

@@ -5,8 +5,25 @@
       "city": "Dhaka",
       "cost": "BDT 20130,000",
       "img": "images/img-3.png",
-      "path": "/services"
+      "path": "/services",
+      "productData": [  {    "id": 1,    "imageurl": "images/img-3.png",    "name": "Front Image"  },  {    "id": 2,    "imageurl": "images/img-2.png",    "name": "Back Image"  },  {    "id": 3,    "imageurl": "images/img-4.png",    "name": "Left Image"  },  {    "id": 4,    "imageurl": "images/img-1.png",    "name": "Right Image"  },  {    "id": 5,    "imageurl": "images/img-6.png",    "name": "Interior image 1"  },  {    "id": 6,    "imageurl": "images/img-6.png",    "name": "Interior image 2"  }]
     },
+    {
+      "id": "42571361-abf6-448d-abb7-f5da169adff0",
+    "name": "BMW",
+    "model": "I8",
+    "year": "2017",
+    "bodyType": "metal",
+    "initialRegistration": "0sdasdas",
+    "registrationNumber": "asdsa122",
+    "fuel": 10,
+    "mileage": 30,
+    "drive": 4,
+    "color": "blue",
+    "transmission": 6,
+    "cost": 30000000,
+    "img": "images/img-3.png"
+  },
     {
         "id": 2,
         "name": "2015 Toyota Axio",
