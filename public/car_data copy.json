@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "1011 Toyota X",
+    "city": "Dhaka",
+    "cost": "BDT 20130,000",
+    "img": "images/img-3.png",
+    "path": "/services",
+    "productData": [
+      { "id": 1, "imageurl": "images/img-3.png", "name": "Front Image" },
+      { "id": 2, "imageurl": "images/img-2.png", "name": "Back Image" },
+      { "id": 3, "imageurl": "images/img-4.png", "name": "Left Image" },
+      { "id": 4, "imageurl": "images/img-1.png", "name": "Right Image" },
+      { "id": 5, "imageurl": "images/img-6.png", "name": "Interior image 1" },
+      { "id": 6, "imageurl": "images/img-6.png", "name": "Interior image 2" }
+    ]
+  },
+  {
+    "id": "42571361-abf6-448d-abb7-f5da169adff0",
+    "name": "BMW",
+    "model": "I8",
+    "year": "2017",
+    "bodyType": "metal",
+    "initialRegistration": "0sdasdas",
+    "registrationNumber": "asdsa122",
+    "fuel": 10,
+    "mileage": 30,
+    "drive": 4,
+    "color": "blue",
+    "transmission": 6,
+    "cost": 30000000,
+    "img": "images/img-3.png"
+  },
+  {
+    "id": 2,
+    "name": "2015 Toyota Axio",
+    "city": "Feni",
+    "cost": "BDT 230,000",
+    "img": "images/img-6.png",
+    "path": "/services"
+  },
+
+  {
+    "id": 3,
+    "name": "2010 Mazda CX-7",
+    "city": "Daunkandi",
+    "cost": "BDT 43130,000",
+    "img": "images/img-7.png",
+    "path": "/services"
+  },
+  {
+    "id": 4,
+    "name": "2017 Honda Shuttle",
+    "city": "Comilla",
+    "cost": "BDT 33130,000",
+    "img": "images/img-7.png",
+    "path": "/services"
+  },
+
+  {
+    "id": 5,
+    "name": "2011 Toyota Premio",
+    "city": "Rajshahi",
+    "cost": "BDT 11130,000",
+    "img": "images/img-3.png",
+    "path": "/services"
+  },
+  {
+    "id": 6,
+    "name": "2000 Toyota Corolla",
+    "city": "Dhaka",
+    "cost": "BDT 20130,000",
+    "img": "images/img-6.png",
+    "path": "/services"
+  },
+  {
+    "id": 7,
+    "name": "2000 Toyota Corolla",
+    "city": "Dhaka",
+    "cost": "BDT 20130,000",
+    "img": "images/img-6.png",
+    "path": "/services"
+  },
+  {
+    "id": 8,
+    "name": "2011 Toyota Premio",
+    "city": "Rajshahi",
+    "cost": "BDT 11130,000",
+    "img": "images/img-3.png",
+    "path": "/services"
+  }
+]
+

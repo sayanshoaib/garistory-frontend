@@ -4,26 +4,15 @@ import { Button } from './../Component/Button';
 import { Link } from 'react-router-dom';
 
 const CarItem = (props) => {
-    const {name, city, cost, img, path} = props.car;
+    const {make, price, imageURL} = props.car;
     
     return (
         <div className='car'>
-            <img src={img} alt=""/>
+            <img src={imageURL} alt=""/>
             <div className='car_text'>
-                <h2>{name}</h2>
-                <h3>{cost}</h3>
+                <h2>{make}</h2>
+                <h3>BDT {price}</h3>
                 
-                {/* <p>Area: {city}</p> */}
-                
-                {/* <Button
-                // className='car_detail_button'
-                buttonStyle='btn--test'
-                buttonSize='btn--medium'
-                // type="submit"
-                >
-                Details
-                </Button> */}
-
                 <Link to='/carz' className='btn-mobile'>
                 <button
                     className={`btn btn--test btn--medium`}
