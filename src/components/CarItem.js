@@ -4,7 +4,7 @@ import { Button } from "./../Component/Button";
 import { Link } from "react-router-dom";
 
 const CarItem = (props) => {
-  const { make, price, imageURL } = props.car;
+  const { vehicleID, make, price, imageURL } = props.car;
 
   return (
     <div className="car">
@@ -13,7 +13,7 @@ const CarItem = (props) => {
         <h2>{make}</h2>
         <h3>BDT {price}</h3>
 
-        <Link to="/carz" className="btn-mobile">
+        <Link to={`/VehicleDetails/${vehicleID}`} className="btn-mobile">
           <button
             className={`btn btn--test btn--medium`}
             // onClick={onClick}
