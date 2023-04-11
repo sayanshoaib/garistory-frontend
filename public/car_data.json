@@ -46,5 +46,53 @@
     "transmission": 6,
     "price": 30000000,
     "imageURL": "images/img-7.png"
+  },
+  {
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff1",
+    "make": "BMW",
+    "model": "I8",
+    "year": "2017",
+    "bodyType": "metal",
+    "initialRegistration": "0sdasdas",
+    "registrationNumber": "asdsa122",
+    "fuel": 10,
+    "mileage": 30,
+    "drive": 4,
+    "color": "blue",
+    "transmission": 6,
+    "price": 30000000,
+    "imageURL": "images/img-6.png"
+  },
+  {
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff2",
+    "make": "BMW",
+    "model": "I8",
+    "year": "2017",
+    "bodyType": "metal",
+    "initialRegistration": "0sdasdas",
+    "registrationNumber": "asdsa122",
+    "fuel": 10,
+    "mileage": 30,
+    "drive": 4,
+    "color": "blue",
+    "transmission": 6,
+    "price": 30000000,
+    "imageURL": "images/img-7.png"
+  },
+  {
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff0",
+    "make": "1011 Toyota X",
+    "model": "I8",
+    "year": "2017",
+    "bodyType": "metal",
+    "initialRegistration": "0sdasdas",
+    "registrationNumber": "asdsa122",
+    "fuel": 10,
+    "mileage": 30,
+    "drive": 4,
+    "color": "blue",
+    "transmission": 6,
+    "price": 20130000,
+    "imageURL": "images/img-3.png"
   }
 ]

@@ -9,9 +9,7 @@ import { Button } from '../Button';
 
 
 function Cars() {
-
-  
-    const product = productData.map((item) => (
+      const product = productData.map((item) => (
         <Slidedata
           name={item.name}
           url={item.imageurl}
