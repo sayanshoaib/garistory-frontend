@@ -37,24 +37,24 @@ function Cars() {
           <table className='car_info'>
         
         <tr>
-          <td>Make</td>
-          <td>Toyota</td>
+          <td className='carin'>Make</td>
+          <td className='carin'>Toyota</td>
         </tr>
         <tr>
-          <td>Model</td>
-          <td>Suzuki</td>
+          <td className='carin'>Model</td>
+          <td className='carin'>Suzuki</td>
         </tr>
         <tr>
-          <td>Manufacturing Year</td>
-          <td>2010</td>
+          <td className='carin'>Manufacturing Year</td>
+          <td className='carin'>2010</td>
         </tr>
         <tr>
-          <td>Condition</td>
-          <td>used</td>
+          <td className='carin'>Condition</td>
+          <td className='carin'>used</td>
         </tr>
         <tr>
-          <td>First purchase year</td>
-          <td>2012</td>
+          <td className='carin'>First purchase year</td>
+          <td className='carin'>2012</td>
         </tr>
       </table>
           </div>
@@ -70,20 +70,20 @@ function Cars() {
           <td>Black</td>
         </tr>
         <tr>
-          <td>Drive Type</td>
-          <td>4 WD</td>
+          <td className='carin'>Drive Type</td>
+          <td className='carin'>4 WD</td>
         </tr>
         <tr>
-          <td>Transmission</td>
-          <td>Automatic</td>
+          <td className='carin'>Transmission</td>
+          <td className='carin'>Automatic</td>
         </tr>
         <tr>
-          <td>Fuel Type</td>
-          <td>Octane</td>
+          <td className='carin'>Fuel Type</td>
+          <td className='carin'>Octane</td>
         </tr>
         <tr>
-          <td>Engine Size</td>
-          <td>2,000cc</td>
+          <td className='carin'>Engine Size</td>
+          <td className='carin'>2,000cc</td>
         </tr>
       </table>
            

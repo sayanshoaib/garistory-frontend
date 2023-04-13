@@ -129,13 +129,13 @@
     margin-right: auto;
     
   }
-   td{
+   .carin{
     border: 1px solid orange;
   padding: 8px;
   color: wheat;
 
   }
-  td:hover {background-color: orange;}
+  .carin:hover {background-color: orange;}
 
   
     input[type = email] {

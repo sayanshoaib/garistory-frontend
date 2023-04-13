@@ -10,6 +10,7 @@ import Serviceentry from "./Component/pages/Serviceentry";
 import ServiceReg  from "./Component/pages/ServiceReg";
 import Services from "./Component/pages/Services";
 import Vehicles from "./Component/pages/Vehicles";
+import Admin from "./Component/pages/Admin";
 import Carz from "./Component/pages/Carz";
 import CarDetails from "./components/CarDetails/CarDetails";
 // import {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/services" exact component={Services}></Route>
           <Route path="/vehicles" exact component={Vehicles}></Route>
           <Route path="/carz" exact component={Carz}></Route>
+          <Route path="/admin" exact component={Admin}></Route>
           <Route path="/VehicleDetails/:vehicleID">{CarDetails}</Route>
         </Switch>
         <Footer />
