@@ -1,0 +1,92 @@
+.tex_s1{
+    display: flex;
+    justify-content: center;
+}
+.rinput_s1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:rgb(35,42,62);
+    border-radius: 18px;
+    height: 450px;
+    width: 900px;
+    margin-bottom: 14px;
+   
+    margin: 0 1rem;
+    padding: 5px 30px 30px;
+
+}
+.rinput>input[type = text] {
+    width: 800px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    background-color:rgb(35,42,62) ;
+    border: 2px solid orange;
+  border-radius: 18px;
+ }
+ .rinput1>input[type = text] {
+    width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    background-color:rgb(35,42,62) ;
+    border: 2px solid orange;
+  border-radius: 18px;
+ }
+ .rinput1>label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: right;
+    color: aliceblue;
+    font-size: 20px;
+    
+  
+    }
+ 
+ .rinput>input[type = number] {
+    width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    background-color:rgb(35,42,62) ;
+    border: 2px solid orange;
+  border-radius: 18px;
+ }
+ .rinput>input[type = email] {
+    width: 400px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    background-color:rgb(35,42,62) ;
+    border: 2px solid orange;
+  border-radius: 18px;
+ }
+
+.rinput>.input [type = password]{
+        width: 400px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+        background-color:rgb(35,42,62) ;
+        border: 2px solid orange;
+      border-radius: 18px;
+     }
+
+     .rinput>label{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: right;
+        color: aliceblue;
+        font-size: 20px;
+        
+      
+        }
+.rinput0{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+

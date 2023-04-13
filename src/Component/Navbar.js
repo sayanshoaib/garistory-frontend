@@ -80,11 +80,11 @@ function Navbar() {
             
             <li className='nav-item'>
               <Link
-                to='/contact'
+                to='/service_reg'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Contact
+                Servicing Center Registration
               </Link>
             </li>
             

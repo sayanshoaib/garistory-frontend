@@ -7,6 +7,7 @@ import Home from "./Component/pages/Home";
 import SignUp from "./Component/pages/SignUp";
 import VehicleEntry from "./Component/pages/VehicleEntry";
 import Serviceentry from "./Component/pages/Serviceentry";
+import ServiceReg  from "./Component/pages/ServiceReg";
 import Services from "./Component/pages/Services";
 import Vehicles from "./Component/pages/Vehicles";
 import Carz from "./Component/pages/Carz";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/entry" exact component={VehicleEntry} />
           <Route path="/service_entry" exact component={Serviceentry} />
+          <Route path="/service_reg" exact component={ServiceReg} />
           <Route path="/signUp" exact component={SignUp} />
           <Route path="/services" exact component={Services}></Route>
           <Route path="/vehicles" exact component={Vehicles}></Route>
