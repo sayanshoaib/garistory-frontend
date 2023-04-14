@@ -48,7 +48,7 @@
     "imageURL": "images/img-7.png"
   },
   {
-    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff1",
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff3",
     "make": "BMW",
     "model": "I8",
     "year": "2017",
@@ -64,7 +64,7 @@
     "imageURL": "images/img-6.png"
   },
   {
-    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff2",
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff4",
     "make": "BMW",
     "model": "I8",
     "year": "2017",
@@ -80,7 +80,7 @@
     "imageURL": "images/img-7.png"
   },
   {
-    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff0",
+    "vehicleID": "42571361-abf6-448d-abb7-f5da169adff5",
     "make": "1011 Toyota X",
     "model": "I8",
     "year": "2017",
