@@ -1,8 +1,12 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
-import Navbar from "./Component/Navbar";
-import Footer from "./Component/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
+
+// import Navbar from "./Component/Navbar";
+// import Footer from "./Component/Footer";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Component/pages/Home";
 import SignUp from "./Component/pages/SignUp";
 import VehicleEntry from "./Component/pages/VehicleEntry";
@@ -13,16 +17,66 @@ import Vehicles from "./Component/pages/Vehicles";
 import Admin from "./Component/pages/Admin";
 import Carz from "./Component/pages/Carz";
 import CarDetails from "./components/CarDetails/CarDetails";
-// import {
-//   createBrowserRouter,
-//   RouterProvider,
-//   // useLoaderData
-// } from "react-router-dom";
+import Main from "./layouts/Main/Main";
+
 
 function App() {
+  console.log("Before router");
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/entry",
+          element: <VehicleEntry></VehicleEntry>
+        },
+        {
+          path: "/service_entry",
+          element: <Serviceentry></Serviceentry>
+        },
+        {
+          path: "/service_reg",
+          element: <ServiceReg></ServiceReg>
+        },
+        {
+          path: "/signUp",
+          element: <SignUp></SignUp>
+        },
+        {
+          path: "/services",
+          element: <Services></Services>
+        },
+        {
+          path: "/vehicles",
+          element: <Vehicles></Vehicles>
+        },
+        {
+          path: "/carz",
+          element: <Carz></Carz>
+        },
+        {
+          path: "/admin",
+          element: <Admin></Admin>
+        },
+        {
+          path: "/VehicleDetails",
+          element: <CarDetails></CarDetails>
+        }
+      ]
+    }
+  ]);
+  console.log("After route");
   return (
     <div>
-      <Router>
+
+      <RouterProvider router={router}></RouterProvider>
+
+      {/* <Router>
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -37,7 +91,7 @@ function App() {
           <Route path="/VehicleDetails/:vehicleID">{CarDetails}</Route>
         </Switch>
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   );
 }
