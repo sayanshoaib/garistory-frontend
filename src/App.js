@@ -25,6 +25,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+          loader: async ({ params }) => {
+            // return fetch(`/api/teams/${params.vehicleID}.json`);
+            return fetch("get_car_data.json");
+          },
         },
         {
           path: "/entry",
@@ -48,9 +52,10 @@ function App() {
         },
         {
           path: "/vehicles",
-          // loader: async () => {
-          //   return fetch();
-          // },
+          loader: async ({ params }) => {
+            // return fetch(`/api/teams/${params.vehicleID}.json`);
+            return fetch("get_car_data.json");
+          },
           element: <Vehicles></Vehicles>,
         },
         {

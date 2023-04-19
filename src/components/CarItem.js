@@ -14,7 +14,7 @@ const CarItem = (props) => {
         <h3>BDT {price}</h3>
 
         <Link to={`/VehicleDetails/${vehicleID}`} className="btn-mobile">
-        {/* <Link to={`/Carz`} className="btn-mobile"> */}
+          {/* <Link to={`/Carz`} className="btn-mobile"> */}
           <button
             className={`btn btn--test btn--medium`}
             // onClick={onClick}

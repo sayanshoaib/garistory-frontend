@@ -1,39 +1,46 @@
-
-import './Vehicles.css';
-import CardItem from './CardItem';
-import React, { useState, useEffect } from 'react';
-import { Button } from './../Button';
-import CarContainer from './../../components/CarContainer';
+import "./Vehicles.css";
+import CardItem from "./CardItem";
+import React, { useState, useEffect } from "react";
+import { Button } from "./../Button";
+import CarContainer from "./../../components/CarContainer";
+import { useLoaderData } from "react-router-dom";
 
 function Vehicles() {
-    const [searchInput, setSearchInput] = useState("");
-    const handleChange = (e) => {
-        e.preventDefault();
-        setSearchInput(e.target.value);
-      };
+  const [searchInput, setSearchInput] = useState("");
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
+  const { data } = useLoaderData();
+  // console.log(data[0]);
 
   return (
-    <div className='cards'>
-      
+    <div className="cards">
       <h4>Our Collection of Cars</h4>
-      <div className='cards__container'>
-      
-      <div className='cards__container2'>
-      <input className='card-input' type="search" placeholder="Enter VIN" onChange={handleChange} value={searchInput} />
+      <div className="cards__container">
+        <div className="cards__container2">
+          <input
+            className="card-input"
+            type="search"
+            placeholder="Enter VIN"
+            onChange={handleChange}
+            value={searchInput}
+          />
 
-      <Button
-          className='btns'
-          buttonStyle='btn--test'
-          buttonSize='btn--large'
-          type="submit"
-        >
-        <i class="fa fa-search"></i>
-        </Button>
+          <Button
+            className="btns"
+            buttonStyle="btn--test"
+            buttonSize="btn--large"
+            type="submit"
+          >
+            <i class="fa fa-search"></i>
+          </Button>
         </div>
 
-        <CarContainer></CarContainer>
+        <CarContainer cars={data}></CarContainer>
 
-{/* 
+        {/* 
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
@@ -87,23 +94,19 @@ function Vehicles() {
         </div>
    */}
 
-        <div className='cards__container2'>
-        <Button
-          className='btns'
-          buttonStyle='btn--test'
-          buttonSize='btn--large'
-          type="submit"
-        >
-        View All Cars
-        </Button>
+        <div className="cards__container2">
+          <Button
+            className="btns"
+            buttonStyle="btn--test"
+            buttonSize="btn--large"
+            type="submit"
+          >
+            View All Cars
+          </Button>
         </div>
-
-
       </div>
     </div>
   );
 }
 
 export default Vehicles;
-
-
