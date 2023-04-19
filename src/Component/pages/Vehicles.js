@@ -38,7 +38,7 @@ function Vehicles() {
           </Button>
         </div>
 
-        <CarContainer cars={data}></CarContainer>
+        <CarContainer cars={data} key={data[0].vehicleID}></CarContainer>
 
         {/* 
         <div className='cards__wrapper'>
