@@ -21,20 +21,20 @@ const VehicleForm = () => {
     event.preventDefault();
 
     const data = {
-      vehicleID,
-      make,
-      model,
-      year,
-      bodyType,
-      initialRegistration,
-      registrationNumber,
-      fuel,
-      mileage,
-      drive,
-      color,
-      transmission,
-      price,
-      imageURL,
+        vehicleID,
+        make,
+        model,
+        year: parseInt(year, 10),
+        bodyType,
+        initialRegistration,
+        registrationNumber,
+        fuel: parseInt(fuel, 10),
+        mileage: parseInt(mileage, 10),
+        drive: parseInt(drive, 10),
+        color,
+        transmission: parseInt(transmission, 10),
+        price: parseInt(price, 10),
+        imageURL,
     };
 
     try {
