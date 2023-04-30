@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import axios from "axios";
+import React, { useState } from "react";
 
 const VehicleForm = () => {
-  const [vehicleID, setVehicleID] = useState('');
-  const [make, setMake] = useState('');
-  const [model, setModel] = useState('');
-  const [year, setYear] = useState('');
-  const [bodyType, setBodyType] = useState('');
-  const [initialRegistration, setInitialRegistration] = useState('');
-  const [registrationNumber, setRegistrationNumber] = useState('');
-  const [fuel, setFuel] = useState('');
-  const [mileage, setMileage] = useState('');
-  const [drive, setDrive] = useState('');
-  const [color, setColor] = useState('');
-  const [transmission, setTransmission] = useState('');
-  const [price, setPrice] = useState('');
-  const [imageURL, setImageURL] = useState('');
+  const [vehicleID, setVehicleID] = useState("");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [year, setYear] = useState("");
+  const [bodyType, setBodyType] = useState("");
+  const [initialRegistration, setInitialRegistration] = useState("");
+  const [registrationNumber, setRegistrationNumber] = useState("");
+  const [fuel, setFuel] = useState("");
+  const [mileage, setMileage] = useState("");
+  const [drive, setDrive] = useState("");
+  const [color, setColor] = useState("");
+  const [transmission, setTransmission] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageURL, setImageURL] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,10 +38,10 @@ const VehicleForm = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8080/vehicle', data);
-      console.log('Response:', response);
+      const response = await axios.post("http://localhost:8080/vehicles", data);
+      console.log("Response:", response);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
