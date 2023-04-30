@@ -11,6 +11,7 @@ import Vehicles from "./components/Vehicles/Vehicles";
 import Main from "./layouts/Main";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
+import VehicleForm from "./components/VehicleForm/VehicleForm";
 
 function App() {
   const router = createBrowserRouter([
@@ -62,6 +63,10 @@ function App() {
         {
           path: "/admin",
           element: <Admin></Admin>,
+        },
+        {
+          path: "/VehicleForm",
+          element: <VehicleForm></VehicleForm>
         },
         {
           path: "/VehicleDetails/:vehicleID",
