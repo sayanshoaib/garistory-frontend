@@ -38,10 +38,23 @@ const VehicleForm = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/vehicles", data);
+      const response = await axios.post(
+        "http://localhost:8080/vehicles",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       console.log("Response:", response);
     } catch (error) {
-      console.error("Error:", error);
+      if (error.response) {
+        console.error("Error:", error.response.data);
+      } else {
+        console.error("Error:", error.message);
+      }
     }
   };
 
