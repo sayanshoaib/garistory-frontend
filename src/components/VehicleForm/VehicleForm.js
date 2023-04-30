@@ -24,7 +24,7 @@ const VehicleForm = () => {
         vehicleID,
         make,
         model,
-        year: parseInt(year, 10),
+        year,
         bodyType,
         initialRegistration,
         registrationNumber,
