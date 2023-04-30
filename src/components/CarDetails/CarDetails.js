@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import "./CarDetails.css";
-import { Button } from "../../Component/Button";
+import { Button } from "../Button/Button";
 
 const CarDetails = () => {
   const car = useLoaderData();

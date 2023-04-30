@@ -1,6 +1,6 @@
 import React from "react";
 import "./CarItem.css";
-import { Button } from "./../Component/Button";
+import { Button } from "../Button/Button";
 import { Link } from "react-router-dom";
 
 const CarItem = (props) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CarItem from "../components/CarItem";
+import CarItem from "../CarItem/CarItem";
 import "./CarContainer.css";
 
 const CarContainer = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import './ServiceReg.css';
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 
 function ServiceReg() {
   return (

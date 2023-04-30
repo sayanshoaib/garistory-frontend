@@ -1,8 +1,7 @@
 import "./Vehicles.css";
-import CardItem from "./CardItem";
 import React, { useState, useEffect } from "react";
-import { Button } from "./../Button";
-import CarContainer from "./../../components/CarContainer";
+import { Button } from "./../Button/Button";
+import CarContainer from "../CarContainer/CarContainer";
 import { useLoaderData } from "react-router-dom";
 
 function Vehicles() {

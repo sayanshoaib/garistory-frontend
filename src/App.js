@@ -1,18 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-
-// import Navbar from "./Component/Navbar";
-// import Footer from "./Component/Footer";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Component/pages/Home";
-import SignUp from "./Component/pages/SignUp";
-import VehicleEntry from "./Component/pages/VehicleEntry";
-import Serviceentry from "./Component/pages/Serviceentry";
-import ServiceReg from "./Component/pages/ServiceReg";
-import Services from "./Component/pages/Services";
-import Vehicles from "./Component/pages/Vehicles";
-import Admin from "./Component/pages/Admin";
-import Carz from "./Component/pages/Carz";
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
+import VehicleEntry from "./components/VehicleEntry/VehicleEntry";
+import Serviceentry from "./components/ServiceEntry/Serviceentry";
+import ServiceReg from "./components/ServiceReg/ServiceReg";
+import Services from "./components/Services/Services";
+import Vehicles from "./components/Vehicles/Vehicles";
+import Admin from "./components/Admin/Admin";
+import Carz from "./components/Carz/Carz";
 import CarDetails from "./components/CarDetails/CarDetails";
 import Main from "./layouts/Main";
 
@@ -24,7 +20,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home></Home>,
           loader: async ({ params }) => {
             // return fetch(`/api/teams/${params.vehicleID}.json`);
             return fetch("get_car_data.json");

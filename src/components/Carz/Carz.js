@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Slidedata from "../Slidedata";
 import '../../App.css';
 import { productData, responsive } from "../Data";
-import { Button } from '../Button';
+import { Button } from '../Button/Button';
 
 
 function Cars() {
