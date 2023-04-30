@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
-import "./CarDetails.css";
 import { Button } from "../Button/Button";
+import "./CarDetails.css";
 
 const CarDetails = () => {
   const car = useLoaderData();
-  console.log(car.imageURL);
+  console.log(car);
 
   return (
     <div className="App">

@@ -1,16 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import VehicleEntry from "./components/VehicleEntry/VehicleEntry";
+import Admin from "./components/Admin/Admin";
+import CarDetails from "./components/CarDetails/CarDetails";
+import Carz from "./components/Carz/Carz";
 import Serviceentry from "./components/ServiceEntry/Serviceentry";
 import ServiceReg from "./components/ServiceReg/ServiceReg";
 import Services from "./components/Services/Services";
+import VehicleEntry from "./components/VehicleEntry/VehicleEntry";
 import Vehicles from "./components/Vehicles/Vehicles";
-import Admin from "./components/Admin/Admin";
-import Carz from "./components/Carz/Carz";
-import CarDetails from "./components/CarDetails/CarDetails";
 import Main from "./layouts/Main";
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,8 +22,8 @@ function App() {
           path: "/",
           element: <Home></Home>,
           loader: async ({ params }) => {
-            // return fetch(`/api/teams/${params.vehicleID}.json`);
-            return fetch("get_car_data.json");
+            //return fetch(`/api/teams/${params.vehicleID}.json`);
+            return fetch("http://localhost:8080/vehicles");
           },
         },
         {
@@ -66,8 +66,8 @@ function App() {
           path: "/VehicleDetails/:vehicleID",
           element: <CarDetails></CarDetails>,
           loader: async ({ params }) => {
-            // return fetch(`/api/teams/${params.vehicleID}.json`);
-            return fetch("car_details.json");
+            return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
+            //return fetch("car_details.json");
           },
         },
       ],
