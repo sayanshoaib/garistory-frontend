@@ -12,7 +12,7 @@ const CarDetails = () => {
         <h1>{car.make}</h1>
         <img
           className="product--image2"
-          src="images/img-3.png"
+          src="/Users/siamsarker/Documents/projects/garistory/public/images/img-3.png"
           alt="product image"
         />
       </div>
