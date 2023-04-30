@@ -93,7 +93,7 @@ const VehicleForm = () => {
       <div>
         <label htmlFor="year">Year:</label>
         <input
-          type="number"
+          type="text"
           id="year"
           name="year"
           value={year}
