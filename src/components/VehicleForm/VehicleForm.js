@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import './VehicleForm.css';
 
 const VehicleForm = () => {
   const [vehicleID, setVehicleID] = useState("");
@@ -59,8 +60,11 @@ const VehicleForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <div>
+        <h1>Vehicle Information Registration</h1>
+        
+    <form onSubmit={handleSubmit} className="vehicle-form">
+      <div className="input-group">
         <label htmlFor="vehicleID">Vehicle ID:</label>
         <input
           type="text"
@@ -70,7 +74,7 @@ const VehicleForm = () => {
           onChange={(e) => setVehicleID(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="make">Make:</label>
         <input
           type="text"
@@ -80,7 +84,7 @@ const VehicleForm = () => {
           onChange={(e) => setMake(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="model">Model:</label>
         <input
           type="text"
@@ -90,7 +94,7 @@ const VehicleForm = () => {
           onChange={(e) => setModel(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="year">Year:</label>
         <input
           type="text"
@@ -100,7 +104,7 @@ const VehicleForm = () => {
           onChange={(e) => setYear(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="bodyType">Body Type:</label>
         <input
           type="text"
@@ -110,7 +114,7 @@ const VehicleForm = () => {
           onChange={(e) => setBodyType(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="initialRegistration">Initial Registration:</label>
         <input
           type="text"
@@ -120,7 +124,7 @@ const VehicleForm = () => {
           onChange={(e) => setInitialRegistration(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="registrationNumber">Registration Number:</label>
         <input
           type="text"
@@ -130,7 +134,7 @@ const VehicleForm = () => {
           onChange={(e) => setRegistrationNumber(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="fuel">Fuel:</label>
         <input
           type="number"
@@ -140,7 +144,7 @@ const VehicleForm = () => {
           onChange={(e) => setFuel(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="mileage">Mileage:</label>
         <input
           type="number"
@@ -150,7 +154,7 @@ const VehicleForm = () => {
           onChange={(e) => setMileage(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="drive">Drive:</label>
         <input
           type="number"
@@ -160,7 +164,7 @@ const VehicleForm = () => {
           onChange={(e) => setDrive(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="color">Color:</label>
         <input
           type="text"
@@ -170,7 +174,7 @@ const VehicleForm = () => {
           onChange={(e) => setColor(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="transmission">Transmission:</label>
         <input
           type="number"
@@ -180,7 +184,7 @@ const VehicleForm = () => {
           onChange={(e) => setTransmission(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="price">Price:</label>
         <input
           type="number"
@@ -190,7 +194,7 @@ const VehicleForm = () => {
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input-group">
         <label htmlFor="imageURL">Image URL:</label>
         <input
           type="text"
@@ -202,6 +206,7 @@ const VehicleForm = () => {
       </div>
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 };
 

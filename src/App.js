@@ -29,8 +29,8 @@ function App() {
           },
         },
         {
-          path: "/entry",
-          element: <VehicleEntry></VehicleEntry>,
+          path: "/vehicle_form",
+          element: <VehicleForm></VehicleForm>,
         },
         {
           path: "/service_entry",
@@ -65,8 +65,8 @@ function App() {
           element: <Admin></Admin>,
         },
         {
-          path: "/VehicleForm",
-          element: <VehicleForm></VehicleForm>
+          path: "/entry",
+          element: <VehicleEntry></VehicleEntry>
         },
         {
           path: "/VehicleDetails/:vehicleID",
