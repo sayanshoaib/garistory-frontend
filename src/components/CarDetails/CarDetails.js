@@ -4,12 +4,12 @@ import "./CarDetails.css";
 
 const CarDetails = () => {
   const car = useLoaderData();
-  console.log(car);
+  console.log(car.message);
 
   return (
     <div className="App">
       <div>
-        <h1>{car.make}</h1>
+        <h1>{car.data.make}</h1>
         <img
           className="product--image2"
           src="/Users/siamsarker/Documents/projects/garistory/public/images/img-3.png"
@@ -18,7 +18,7 @@ const CarDetails = () => {
       </div>
 
       <div className="price">
-        <h2>${car.price} BDT</h2>
+        <h2>${car.data.price} BDT</h2>
       </div>
       <div className="holder">
         <div className="hdata">
@@ -27,15 +27,15 @@ const CarDetails = () => {
             <table className="car_info">
               <tr>
                 <td className="carin">Make</td>
-                <td className="carin">{car.make}</td>
+                <td className="carin">{car.data.make}</td>
               </tr>
               <tr>
                 <td className="carin">Model</td>
-                <td className="carin">{car.model}</td>
+                <td className="carin">{car.data.model}</td>
               </tr>
               <tr>
                 <td className="carin">Manufacturing Year</td>
-                <td className="carin">{car.year}</td>
+                <td className="carin">{car.data.year}</td>
               </tr>
               <tr>
                 <td className="carin">Condition</td>
@@ -55,19 +55,19 @@ const CarDetails = () => {
             <table className="car_info">
               <tr>
                 <td className="carin">Color</td>
-                <td className="carin">{car.color}</td>
+                <td className="carin">{car.data.color}</td>
               </tr>
               <tr>
                 <td className="carin">Drive Type</td>
-                <td className="carin">{car.drive}</td>
+                <td className="carin">{car.data.drive}</td>
               </tr>
               <tr>
                 <td className="carin">Transmission</td>
-                <td className="carin">{car.transmission}</td>
+                <td className="carin">{car.data.transmission}</td>
               </tr>
               <tr>
                 <td className="carin">Fuel Type</td>
-                <td className="carin">{car.fuel}</td>
+                <td className="carin">{car.data.fuel}</td>
               </tr>
               <tr>
                 <td className="carin">Engine Size</td>
