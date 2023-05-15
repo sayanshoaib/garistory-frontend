@@ -50,7 +50,7 @@ function Navbar() {
                 Vehicle Entry
               </Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/service_entry'
                 className='nav-links'
@@ -58,7 +58,7 @@ function Navbar() {
               >
                 Service Entry
               </Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link
                 to='/admin'
@@ -78,7 +78,7 @@ function Navbar() {
               </Link>
             </li>
             
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/service_reg'
                 className='nav-links'
@@ -86,7 +86,28 @@ function Navbar() {
               >
                 Servicing Center Registration
               </Link>
+            </li> */}
+
+            <li className='nav-item'>
+              <Link
+                to='/service_center_reg'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Servicing Center Registration
+              </Link>
             </li>
+
+            <li className='nav-item'>
+              <Link
+                to='/service_center'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Servicing Centers
+              </Link>
+            </li>
+
             
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN IN</Button>}

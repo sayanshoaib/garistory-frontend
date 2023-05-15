@@ -5,6 +5,7 @@ import CarDetails from "./components/CarDetails/CarDetails";
 import Carz from "./components/Carz/Carz";
 import Serviceentry from "./components/ServiceEntry/Serviceentry";
 import ServiceReg from "./components/ServiceReg/ServiceReg";
+import ServiceCenterReg from "./components/ServiceCenterReg/ServiceCenterReg";
 import Services from "./components/Services/Services";
 import VehicleEntry from "./components/VehicleEntry/VehicleEntry";
 import Vehicles from "./components/Vehicles/Vehicles";
@@ -12,6 +13,7 @@ import Main from "./layouts/Main";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import VehicleForm from "./components/VehicleForm/VehicleForm";
+import ServiceCenter from "./components/ServiceCenter/ServiceCenter";
 
 function App() {
   const router = createBrowserRouter([
@@ -39,6 +41,15 @@ function App() {
         {
           path: "/service_reg",
           element: <ServiceReg></ServiceReg>,
+        },
+        {
+          path: "/service_center_reg",
+          element: <ServiceCenterReg></ServiceCenterReg>,
+        },
+
+        {
+          path: "/service_center",
+          element: <ServiceCenter></ServiceCenter>
         },
         {
           path: "/signUp",

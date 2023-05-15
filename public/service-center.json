@@ -1,0 +1,39 @@
+{
+    "count": 3,
+    "data": [
+      {
+        "serviceCenterID": "2eef4b1f-5f5d-4865-8503-e9cf5469669c",
+        "name": "Maven Car Servicing Center",
+        "email": "maven@gmail.com",
+        "address": {
+          "name": "",
+          "street": "",
+          "zipcode": "",
+          "country": ""
+        }
+      },
+      {
+        "serviceCenterID": "93b0f8dc-2cf9-46a8-badc-8b582c7d6714",
+        "name": "Rover Car Servicing Center",
+        "email": "rover@gmail.com",
+        "address": {
+          "name": "Gulshan-1",
+          "street": "8A",
+          "zipcode": "20342",
+          "country": "Bangladesh"
+        }
+      },
+      {
+        "serviceCenterID": "1914626a-be9b-4d37-bae8-d013015106d3",
+        "name": "Navana Servicing Center",
+        "email": "navana@gmail.com",
+        "address": {
+          "name": "Tejgaon",
+          "street": "Block- A",
+          "zipcode": "9210334",
+          "country": "Bangladesh"
+        }
+      }
+    ],
+    "message": true
+  }
