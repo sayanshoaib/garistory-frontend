@@ -66,8 +66,8 @@ function Cars() {
           <table className='car_info'>
         
         <tr>
-          <td>Color</td>
-          <td>Black</td>
+          <td className='carin'>Color</td>
+          <td className='carin'>Black</td>
         </tr>
         <tr>
           <td className='carin'>Drive Type</td>
