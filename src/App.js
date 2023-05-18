@@ -31,8 +31,8 @@ function App() {
           },
         },
         {
-          path: "/vehicle_form",
-          element: <VehicleForm></VehicleForm>,
+          path: "/entry",
+          element: <VehicleEntry></VehicleEntry>,
         },
         {
           path: "/service_entry",
@@ -86,6 +86,14 @@ function App() {
             // return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
             return fetch("car_details.json");
           },
+        },
+        {
+          path: "/admin/:serviceCenterID",
+          element: <Admin></Admin>,
+          loader: async ({ params }) => {
+            // return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
+            return fetch("car_details.json");
+          }, 
         },
       ],
     },
