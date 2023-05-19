@@ -1,0 +1,14 @@
+{
+    "data": {
+      "serviceCenterID": "93b0f8dc-2cf9-46a8-badc-8b582c7d6714",
+      "name": "Rover Car Servicing Center",
+      "email": "rover@gmail.com",
+      "address": {
+        "name": "Gulshan-1",
+        "street": "8A",
+        "zipcode": "20342",
+        "country": "Bangladesh"
+      }
+    },
+    "message": true
+  }

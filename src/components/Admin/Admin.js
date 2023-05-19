@@ -1,8 +1,25 @@
-import React from 'react'
-import'./Admin.css';
-import { Button } from '../Button/Button';
 
-function Admin() {
+import'./Admin.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Button } from '../Button/Button';
+import { Link } from "react-router-dom";
+
+const Admin= () => {
+  const [serviceCenters, setServiceCenters] = useState([]);
+  useEffect(() => {
+    const fetchServiceCenters = async () => {
+      try {
+        // const response = await axios.get("http://localhost:8080/service-center");
+        const response = await axios.get("service-center.json");
+        setServiceCenters(response.data.data);
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    };
+
+    fetchServiceCenters();
+  }, []);
     const data = [
         { name: "Anom Servicing Center", id: 19},
         { name: "Megha Fusion Vehicle Center", id: 11},
@@ -26,14 +43,20 @@ function Admin() {
           <th className='centerhead'>ID</th>
           
         </tr>
-            {data.map((val, key) => {
+            {serviceCenters.map((serviceCenter) =>  {
               return (
-                <tr className='centercase' key={key}>
-                  <td className='centers'>{val.name}</td>
-                  <td className='centers'>{val.id}</td>
+                <tr className='centercase' key={serviceCenter.serviceCenterID}>
+                  <td className='centers'>{serviceCenter.name}</td>
+                  <td className='centers'>{serviceCenter.serviceCenterID}</td>
                   
-                  <td className='centers'><Button className='btns'buttonStyle='btn--test'buttonSize='btn--small'>Delete</Button></td>
-                  <td className='centers'><Button className='btns'buttonStyle='btn--test'buttonSize='btn--small'>Update</Button></td>
+                  <td className='centers'><Link to={`/admin/${serviceCenter.serviceCenterID}`} className="btn-mobile"> 
+                  <button> Delete </button>
+                  </Link> 
+                  </td>
+                  <td className='centers'><Link to={`/admin/${serviceCenter.serviceCenterID}`} className="btn-mobile"> 
+                  <button> Update </button>
+                  </Link>
+                  </td>
                 </tr>
               )
             })}

@@ -91,8 +91,7 @@ function App() {
           path: "/admin/:serviceCenterID",
           element: <Admin></Admin>,
           loader: async ({ params }) => {
-            // return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
-            return fetch("car_details.json");
+            return fetch("service_data.json");
           }, 
         },
       ],
