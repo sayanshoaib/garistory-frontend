@@ -80,6 +80,10 @@ function App() {
           element: <VehicleEntry></VehicleEntry>
         },
         {
+          path: "/vehicle_form",
+          element: <VehicleForm></VehicleForm>
+        },
+        {
           path: "/VehicleDetails/:vehicleID",
           element: <CarDetails></CarDetails>,
           loader: async ({ params }) => {
