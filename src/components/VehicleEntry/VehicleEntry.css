@@ -128,6 +128,25 @@
     
     
   }
+  .form_s button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: #ecf0f1;
+    background-color: orange;
+    cursor: pointer;
+  }
+  
+  .form_s button:hover {
+    background-color: orange;
+  }
+  
+  .form_s button:active {
+    transform: translateY(1px);
+  }
+  
   
 
   
