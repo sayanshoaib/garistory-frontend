@@ -1,55 +1,57 @@
 .service-center-form {
-    background-color: rgb(35, 42, 62);
-    border-radius: 18px;
-    padding: 30px;
-    width: 40%;
-    margin: 50px auto;
-  }
-  
-  .service-center-form div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .service-center-form label {
-    font-size: 18px;
-    color: #ecf0f1;
-    margin-right: 10px;
-  }
-  
-  .service-center-form input {
-    width: 60%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    background-color: #34495e;
-    border: 1px solid #34495e;
-    border-radius: 18px;
-    color: #ecf0f1;
-  }
-  
-  .service-center-form input:focus {
-    outline: none;
-    border-color: orange;
-  }
-  
-  .service-center-form button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: none;
-    font-size: 16px;
-    color: #ecf0f1;
-    background-color: orange;
-    cursor: pointer;
-  }
-  
-  .service-center-form button:hover {
-    background-color: orange;
-  }
-  
-  .service-center-form button:active {
-    transform: translateY(1px);
-  }
-  
+  background-color: rgb(35, 42, 62);
+  border-radius: 18px;
+  padding: 30px;
+  width: 40%;
+  margin: 50px auto;
+}
+
+.service-center-form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.service-center-form label {
+  font-size: 18px;
+  color: #ecf0f1;
+  margin-right: 10px;
+}
+
+.service-center-form input[type="text"],
+.service-center-form input[type="email"],
+.service-center-form input[type="password"] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: rgb(35, 42, 62);
+  border: 2px solid white;
+  border-radius: 18px;
+  color: #ecf0f1;
+}
+
+.service-center-form input:focus {
+  outline: none;
+  border-color: orange;
+}
+
+.service-center-form button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.service-center-form button:hover {
+  background-color: orange;
+}
+
+.service-center-form button:active {
+  transform: translateY(1px);
+}

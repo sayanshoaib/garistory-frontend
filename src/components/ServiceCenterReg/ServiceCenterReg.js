@@ -61,6 +61,7 @@ const ServiceCenterReg = () => {
             name="serviceCenterID"
             value={serviceCenterID}
             onChange={(e) => setServiceCenterID(e.target.value)}
+            placeholder="Enter Service Center ID"
             className="input"
           />
         </div>
@@ -74,6 +75,7 @@ const ServiceCenterReg = () => {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="Enter Your Name"
             className="input"
           />
         </div>
@@ -87,6 +89,7 @@ const ServiceCenterReg = () => {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Your Email"
             className="input"
           />
         </div>
@@ -105,6 +108,7 @@ const ServiceCenterReg = () => {
                 name: e.target.value,
               }))
             }
+            placeholder="Enter Address Name"
             className="input"
           />
         </div>
@@ -123,6 +127,7 @@ const ServiceCenterReg = () => {
                 street: e.target.value,
               }))
             }
+            placeholder="Enter Street"
             className="input"
           />
         </div>
@@ -141,6 +146,7 @@ const ServiceCenterReg = () => {
                 zipcode: e.target.value,
               }))
             }
+            placeholder="Enter Zipcode"
             className="input"
           />
         </div>
@@ -159,6 +165,7 @@ const ServiceCenterReg = () => {
                 country: e.target.value,
               }))
             }
+            placeholder="Enter Country"
             className="input"
           />
         </div>
@@ -172,6 +179,7 @@ const ServiceCenterReg = () => {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter Your Password"
             className="input"
           />
         </div>

@@ -6,7 +6,7 @@
   margin: 50px auto;
 }
 
-.vehicle-form .input-group {
+.vehicle-form div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,19 +19,22 @@
   margin-right: 10px;
 }
 
-.vehicle-form input {
-  width: 60%;
+.vehicle-form input[type="text"],
+.vehicle-form input[type="number"],
+.vehicle-form input[type="email"],
+.vehicle-form input[type="password"] {
+  width: 300px;
   padding: 12px 20px;
+  margin: 8px 0;
   box-sizing: border-box;
-  background-color: #34495e;
-  border: 1px solid #34495e;
+  background-color: rgb(35, 42, 62);
+  border: 2px solid white;
   border-radius: 18px;
   color: #ecf0f1;
 }
 
 .vehicle-form input:focus {
   outline: none;
-  /* border-color: #1abc9c; */
   border-color: orange;
 }
 
@@ -41,7 +44,7 @@
   border-radius: 3px;
   border: none;
   font-size: 16px;
-  color: #ecf0f1;
+  color: white;
   background-color: orange;
   cursor: pointer;
 }
