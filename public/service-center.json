@@ -13,6 +13,17 @@
         }
       },
       {
+        "serviceCenterID": "2eef4b1f-5f5d-4865-8503-e9cf5469669d",
+        "name": "Siam Car Servicing Center",
+        "email": "siam@gmail.com",
+        "address": {
+          "name": "",
+          "street": "",
+          "zipcode": "",
+          "country": ""
+        }
+      },
+      {
         "serviceCenterID": "93b0f8dc-2cf9-46a8-badc-8b582c7d6714",
         "name": "Rover Car Servicing Center",
         "email": "rover@gmail.com",
