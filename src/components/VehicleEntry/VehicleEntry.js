@@ -156,4 +156,4 @@ function VehicleEntry() {
   )
 }
 
-export default VehicleEntry
+export default VehicleEntry;
