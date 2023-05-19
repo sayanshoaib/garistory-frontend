@@ -26,15 +26,26 @@ const ServiceCenter = () => {
       {serviceCenters.length === 0 ? (
         <p>Loading service centers...</p>
       ) : (
-        <ul>
+        <form>
           {serviceCenters.map((serviceCenter) => (
             <li key={serviceCenter.serviceCenterID} className="service-center-item">
               <h2>{serviceCenter.name}</h2>
-              <p>Email: {serviceCenter.email}</p>
-              <p>Address: {serviceCenter.address.name}, {serviceCenter.address.street}, {serviceCenter.address.zipcode}, {serviceCenter.address.country}</p>
+
+              <label htmlFor='sc_name'>Servicing center name</label>
+              <input value={serviceCenter.name}/> 
+              <label htmlFor='sc_email'>Servicing center email</label>
+              <input value={serviceCenter.email}/> 
+              <label htmlFor='sc_address_name'>Address name</label>
+              <input value={serviceCenter.address.name}/> 
+              <label htmlFor='sc_address_street'>Address Street</label>
+              <input value={serviceCenter.address.street}/> 
+              <label htmlFor='sc_address_zicode'>Address Zipcod</label>
+              <input value={serviceCenter.address.zipcod}/> 
+              <label htmlFor='sc_address_country'>Country</label>
+              <input value={serviceCenter.address.country}/> 
             </li>
           ))}
-        </ul>
+        </form>
       )}
     </div>
   );
