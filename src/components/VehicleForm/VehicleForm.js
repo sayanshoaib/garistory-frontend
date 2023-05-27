@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "./VehicleForm.css";
+import { Link } from "react-router-dom";
 
 const VehicleForm = () => {
   const [vehicleID, setVehicleID] = useState("");
@@ -44,8 +45,8 @@ const VehicleForm = () => {
           "Content-Type": "application/json",
         },
       });
-
       console.log("Response:", response);
+      <Link to={'/vehicles'}></Link>
     } catch (error) {
       if (error.response) {
         console.error("Error:", error.response.data);
