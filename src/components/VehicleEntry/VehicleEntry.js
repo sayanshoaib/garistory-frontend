@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState,useEffect } from "react"; 
 import '../../App.css';
 import './VehicleEntry.css';
 
@@ -19,6 +19,17 @@ const VehicleEntry= () => {
   const [transmission, setTransmission] = useState("");
   const [price, setPrice] = useState("");
   const [imageURL, setImageURL] = useState("");
+  // Function to generate a random VIN
+  const generateRandomVIN = async () => {
+    try {
+      const response = await axios.get("https://www.uuidgenerator.net/api/generators/v1/uuids?count=1");
+      const randomVIN = response.data.uuids[0].id;
+      setVehicleID(randomVIN);
+    } catch (error) {
+      console.error("Error generating random VIN:", error);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -60,6 +71,9 @@ const VehicleEntry= () => {
     }
   };
   
+useEffect(() => {
+    generateRandomVIN();
+  }, []);
 
   return (
     <main className='main_s'>
