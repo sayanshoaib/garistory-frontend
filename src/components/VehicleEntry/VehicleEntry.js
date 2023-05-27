@@ -51,24 +51,23 @@ const VehicleEntry= () => {
       imageURL,
     };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/vehicles",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+
+     try {
+      const response = await axios.post("http://localhost:8080/vehicles", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       console.log("Response:", response);
-    } catch (error) {
+      setSubmissionStatus("success"); // Set submission status to success
+    }catch (error) {
       if (error.response) {
         console.error("Error:", error.response.data);
       } else {
         console.error("Error:", error.message);
       }
+      setSubmissionStatus("failure"); // Set submission status to failure
     }
   };
   
@@ -80,6 +79,12 @@ useEffect(() => {
     <main className='main_s'>
 
       <h1> Vehicle Information Registration</h1>
+      {submissionStatus === "success" && ( // Render the confirmation message if submission is successful
+        <div className="success-message">Form submitted successfully!</div>
+      )}
+      {submissionStatus === "failure" && ( // Render the error message if submission fails
+        <div className="error-message">Form submission failed. Please try again.</div>
+      )}
 
       <form className='form_s' onSubmit={handleSubmit} >
         <div>
