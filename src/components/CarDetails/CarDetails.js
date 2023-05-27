@@ -1,10 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 import { Button } from "../Button/Button";
 import "./CarDetails.css";
 
 const CarDetails = () => {
   const car = useLoaderData();
   console.log(car.message);
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:8080/vehicles/${car.data.vehicleID}`);
+      // Perform any additional actions after successful deletion
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <div className="App">
@@ -87,6 +98,15 @@ const CarDetails = () => {
         </div>
       </div>
 
+      <div className="buttons-container">
+        <Link to={`/vehicles/${car.data.vehicleID}/update`}>
+          <button className="update-button">Update</button>
+        </Link>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+
       <div className="hdata_query">
         <h2>If you have any query write us</h2>
         <form className="query">
@@ -125,6 +145,8 @@ const CarDetails = () => {
           Apply NOW!!
         </Button>
       </div>
+
+     
     </div>
   );
 };

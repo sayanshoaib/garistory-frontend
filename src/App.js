@@ -14,6 +14,8 @@ import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import VehicleForm from "./components/VehicleForm/VehicleForm";
 import ServiceCenter from "./components/ServiceCenter/ServiceCenter";
+import UpdateVehicleForm from "./components/UpdateVehicleForm/UpdateVehicleForm";
+
 
 function App() {
   const router = createBrowserRouter([
@@ -91,6 +93,19 @@ function App() {
             // return fetch("car_details.json");
           },
         },
+
+        {
+          path: "/vehicles/:id/update",
+          element: <UpdateVehicleForm></UpdateVehicleForm>,
+          loader: async ({ params }) => {
+            return fetch(`http://localhost:8080/vehicles/${params.id}`);
+            // return fetch("car_details.json");
+          },
+        },
+
+        // <Route path="/vehicles/:id/update" element={<UpdateVehicleForm />} />
+
+
         {
           path: "/admin/:serviceCenterID",
           element: <Admin></Admin>,
@@ -104,23 +119,6 @@ function App() {
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
-
-      {/* <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/entry" exact component={VehicleEntry} />
-          <Route path="/service_entry" exact component={Serviceentry} />
-          <Route path="/service_reg" exact component={ServiceReg} />
-          <Route path="/signUp" exact component={SignUp} />
-          <Route path="/services" exact component={Services}></Route>
-          <Route path="/vehicles" exact component={Vehicles}></Route>
-          <Route path="/carz" exact component={Carz}></Route>
-          <Route path="/admin" exact component={Admin}></Route>
-          <Route path="/VehicleDetails/:vehicleID">{CarDetails}</Route>
-        </Switch>
-        <Footer />
-      </Router> */}
     </div>
   );
 }

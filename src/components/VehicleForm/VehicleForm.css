@@ -56,3 +56,36 @@
 .vehicle-form button:active {
   transform: translateY(1px);
 }
+
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.update-button,
+.delete-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  background-color: orange;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
+
+.update-button:hover,
+.delete-button:hover {
+  background-color: orange;
+}
+
+.update-button:active,
+.delete-button:active {
+  transform: translateY(1px);
+}

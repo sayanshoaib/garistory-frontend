@@ -159,55 +159,7 @@
   height: 230px;
   text-align: center;
  }
-  /*.crud{
-
-    background-color: rgb(35,42,62);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color:rgb(35,42,62);
-    border-radius: 18px;
-    margin: 0 1rem;
-    padding: 5px 30px 30px;
-  }
-  
  
-  
-  .cardz button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: orange;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    border-radius: 18px;
-  }
-  
-  .cardz button:hover {
-    opacity: 0.7;
-  }
-  .box{
-    
-    display: flex;
-    flex-direction: row;
-    border-radius: 18px;
-    justify-content: center;
-  }
-  .box button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: orange;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    border-radius: 18px;
-  }
-  .box button:hover {
-    opacity: 0.7;
-  }*/
+
+
+ 
