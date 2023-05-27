@@ -19,7 +19,8 @@ const VehicleEntry= () => {
   const [transmission, setTransmission] = useState("");
   const [price, setPrice] = useState("");
   const [imageURL, setImageURL] = useState("");
-  const [submissionStatus, setSubmissionStatus] = useState("");
+  const [SubmissionStatus, setSubmissionStatus] = useState("");
+
   // Function to generate a random VIN
   const generateRandomVIN = async () => {
     try {
@@ -62,11 +63,11 @@ const VehicleEntry= () => {
 
       console.log("Response:", response);
       setSubmissionStatus("success"); // Set submission status to success
-      setIsDialogOpen(true);
+
       setTimeout(() => {
-        setIsDialogOpen(false);
         window.location.reload();
       }, 2000);
+
     }catch (error) {
       if (error.response) {
         console.error("Error:", error.response.data);
@@ -74,7 +75,6 @@ const VehicleEntry= () => {
         console.error("Error:", error.message);
       }
       setSubmissionStatus("failure"); // Set submission status to failure
-      setIsDialogOpen(true);
     }
   };
   
@@ -86,18 +86,14 @@ useEffect(() => {
     <main className='main_s'>
 
       <h1> Vehicle Information Registration</h1>
-      {/* Dialog Box */}
-      {isDialogOpen && (
-        <div className="dialog">
-          <div className="dialog-content">
-            {submissionStatus === "success" ? (
-              <p>Form submitted successfully!</p>
-            ) : (
-              <p>Form submission failed. Please try again.</p>
-            )}
-          </div>
-        </div>
+
+      {SubmissionStatus === "success" && ( // Render the confirmation message if submission is successful
+        <div className="success-message">Form submitted successfully!</div>
       )}
+      {SubmissionStatus === "failure" && ( // Render the error message if submission fails
+        <div className="error-message">Form submission failed. Please try again.</div>
+      )}
+      
 
       <form className='form_s' onSubmit={handleSubmit} >
         <div>
