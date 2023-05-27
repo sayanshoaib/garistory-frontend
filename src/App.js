@@ -15,6 +15,7 @@ import SignUp from "./pages/SignUp";
 import VehicleForm from "./components/VehicleForm/VehicleForm";
 import ServiceCenter from "./components/ServiceCenter/ServiceCenter";
 import UpdateVehicleForm from "./components/UpdateVehicleForm/UpdateVehicleForm";
+import UpdateServiceCenterReg from "./components/UpdateServiceCenterReg/UpdateServiceCenterReg";
 
 
 function App() {
@@ -103,7 +104,17 @@ function App() {
           },
         },
 
+        {
+          path: "/service-center/update/:serviceCenterID",
+          element: <UpdateServiceCenterReg></UpdateServiceCenterReg>,
+          // loader: async ({ params }) => {
+          //   return fetch(`http://localhost:8080/vehicles/${params.id}`);
+          //   // return fetch("car_details.json");
+          // },
+        },
+
         // <Route path="/vehicles/:id/update" element={<UpdateVehicleForm />} />
+        // <Route path="/service-center/update/:serviceCenterID" component={UpdateServiceCenterReg} />
 
 
         {

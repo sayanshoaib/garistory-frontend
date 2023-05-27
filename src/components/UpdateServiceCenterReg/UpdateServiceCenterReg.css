@@ -1,0 +1,57 @@
+.update-service-center-form {
+    background-color: rgb(35, 42, 62);
+    border-radius: 18px;
+    padding: 30px;
+    width: 40%;
+    margin: 50px auto;
+  }
+  
+  .update-service-center-form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .update-service-center-form label {
+    font-size: 18px;
+    color: #ecf0f1;
+    margin-right: 10px;
+  }
+  
+  .update-service-center-form input[type="text"],
+  .update-service-center-form input[type="email"] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+  }
+  
+  .update-service-center-form input:focus {
+    outline: none;
+    border-color: orange;
+  }
+  
+  .update-service-center-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+  }
+  
+  .update-service-center-form button:hover {
+    background-color: orange;
+  }
+  
+  .update-service-center-form button:active {
+    transform: translateY(1px);
+  }
+  

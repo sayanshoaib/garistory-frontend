@@ -19,6 +19,8 @@ const VehicleEntry= () => {
   const [transmission, setTransmission] = useState("");
   const [price, setPrice] = useState("");
   const [imageURL, setImageURL] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+  
   // Function to generate a random VIN
   const generateRandomVIN = async () => {
     try {
@@ -61,6 +63,9 @@ const VehicleEntry= () => {
 
       console.log("Response:", response);
       setSubmissionStatus("success"); // Set submission status to success
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }catch (error) {
       if (error.response) {
         console.error("Error:", error.response.data);
