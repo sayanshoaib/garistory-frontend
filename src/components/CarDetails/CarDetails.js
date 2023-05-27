@@ -21,11 +21,15 @@ const CarDetails = () => {
     <div className="App">
       <div>
         <h1>{car.data.make}</h1>
-        <img
+        {/* <img
           className="product--image2"
-          src="/Users/siamsarker/Documents/projects/garistory/public/images/img-3.png"
+          src={car.data.imageURL}
           alt="product image"
-        />
+        /> */}
+      </div>
+
+      <div>
+      <img src={car.data.imageURL} alt="Car" />
       </div>
 
       <div className="price">

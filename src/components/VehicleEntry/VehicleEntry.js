@@ -22,9 +22,10 @@ const VehicleEntry= () => {
   // Function to generate a random VIN
   const generateRandomVIN = async () => {
     try {
-      const response = await axios.get("https://www.uuidgenerator.net/api/generators/v1/uuids?count=1");
-      const randomVIN = response.data.uuids[0].id;
-      setVehicleID(randomVIN);
+      const response = await axios.get("https://www.uuidgenerator.net/api/version1");
+      // const randomVIN = response.data.uuids[0];
+      console.log(response.data);
+      setVehicleID(response.data);
     } catch (error) {
       console.error("Error generating random VIN:", error);
     }
