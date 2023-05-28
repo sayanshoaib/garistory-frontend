@@ -16,23 +16,25 @@
   padding: 20px;
   background-color: #f9f9f9;
 }
-.service-center-item {
-  background-color: rgb(35, 42, 62);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
 
 .service-center-item h2 {
-  font-size: 20px;
-  color: #ecf0f1;
+  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .service-center-item p {
-  font-size: 16px;
-  color: #ecf0f1;
   margin-bottom: 5px;
+}
+
+.service-center-item label {
+  font-weight: bold;
+}
+
+.service-center-item .field-value {
+  margin-left: 10px;
+  font-weight: normal;
+  color: #555;
 }
 
 .service-center-item .button-container {
