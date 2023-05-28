@@ -37,17 +37,18 @@ const UpdateVehicleForm = () => {
       },
     }));
   };
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:8080/vehicles/${id}`, vehicle.data);
       // Handle successful update
       console.log("Vehicle updated successfully!");
+      setEditMode(false); // Disable edit mode after submission
     } catch (error) {
       console.error("Error updating vehicle:", error);
     }
   };
+  
 
   if (!vehicle) {
     return <div>Loading...</div>;
