@@ -6,6 +6,7 @@ import "./UpdateVehicleForm.css";
 const UpdateVehicleForm = () => {
   const { id } = useParams();
   const [vehicle, setVehicle] = useState(null);
+  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
     fetchVehicleData(id);
@@ -16,9 +17,14 @@ const UpdateVehicleForm = () => {
       const response = await axios.get(`http://localhost:8080/vehicles/${id}`);
       const vehicleData = response.data;
       setVehicle(vehicleData);
+      setEditMode(false); // Set the initial edit state to false
     } catch (error) {
       console.error("Error fetching vehicle data:", error);
     }
+  };
+
+  const toggleEdit = () => {
+    setEditMode((prevEditMode) => !prevEditMode);
   };
 
   const handleChange = (e) => {
@@ -47,6 +53,10 @@ const UpdateVehicleForm = () => {
   return (
     <div className="update-vehicle-form">
       <h2>Update Vehicle</h2>
+      <button onClick={toggleEdit}>
+        {editMode ? "Cancel Edit" : "Edit Vehicle"}
+      </button>
+      {editMode ? (
       <form onSubmit={handleSubmit}>
         <div>
           <label>Make:</label>
@@ -114,25 +124,64 @@ const UpdateVehicleForm = () => {
         <div>
           <label>Price:</label>
           <input
-            type="text"
-            name="price"
-            value={vehicle.data.price}
-            onChange={handleChange}
-          />
-        </div>
+              type="text"
+              name="price"
+              value={vehicle.data.price}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Image URL:</label>
+            <input
+              type="text"
+              name="imageURL"
+              value={vehicle.data.imageURL}
+              onChange={handleChange}
+              placeholder="Enter Image URL"
+            />
+          </div>
+          <button type="submit">Update Vehicle</button>
+        </form>
+      ) : (
         <div>
-          <label>Image URL:</label>
-          <input
-            type="text"
-            name="imageURL"
-            value={vehicle.data.imageURL}
-            // value="images/img-6.png"
-            onChange={handleChange}
-            placeholder="Enter Image URL"
-          />
+          <div>
+            <label>Make:</label>
+            <span>{vehicle.data.make}</span>
+          </div>
+          <div>
+            <label>Model:</label>
+            <span>{vehicle.data.model}</span>
+          </div>
+          <div>
+            <label>Year:</label>
+            <span>{vehicle.data.year}</span>
+          </div>
+          <div>
+            <label>Color:</label>
+            <span>{vehicle.data.color}</span>
+          </div>
+          <div>
+            <label>Drive:</label>
+            <span>{vehicle.data.drive}</span>
+          </div>
+          <div>
+            <label>Transmission:</label>
+            <span>{vehicle.data.transmission}</span>
+          </div>
+          <div>
+            <label>Fuel:</label>
+            <span>{vehicle.data.fuel}</span>
+          </div>
+          <div>
+            <label>Price:</label>
+            <span>{vehicle.data.price}</span>
+          </div>
+          <div>
+            <label>Image URL:</label>
+            <span>{vehicle.data.imageURL}</span>
+          </div>
         </div>
-        <button type="submit">Update Vehicle</button>
-      </form>
+      )}
     </div>
   );
 };
