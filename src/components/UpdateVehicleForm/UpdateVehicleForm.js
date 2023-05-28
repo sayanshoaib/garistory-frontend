@@ -31,10 +31,13 @@ const UpdateVehicleForm = () => {
     const { name, value } = e.target;
     setVehicle((prevVehicle) => ({
       ...prevVehicle,
-      [name]: value,
+      data: {
+        ...prevVehicle.data,
+        [name]: value,
+      },
     }));
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -63,7 +66,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="make"
-            value={vehicle.data.make}
+            value={vehicle.data && vehicle.data.make}
             onChange={handleChange}
           />
         </div>
@@ -72,7 +75,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="model"
-            value={vehicle.data.model}
+            value={vehicle.data && vehicle.data.model}
             onChange={handleChange}
           />
         </div>
@@ -81,7 +84,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="year"
-            value={vehicle.data.year}
+            value={vehicle.data && vehicle.data.year}
             onChange={handleChange}
           />
         </div>
@@ -90,7 +93,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="color"
-            value={vehicle.data.color}
+            value={vehicle.data && vehicle.data.color}
             onChange={handleChange}
           />
         </div>
@@ -99,7 +102,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="drive"
-            value={vehicle.data.drive}
+            value={vehicle.data && vehicle.data.drive}
             onChange={handleChange}
           />
         </div>
@@ -108,7 +111,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="transmission"
-            value={vehicle.data.transmission}
+            value={vehicle.data && vehicle.data.transmission}
             onChange={handleChange}
           />
         </div>
@@ -117,7 +120,7 @@ const UpdateVehicleForm = () => {
           <input
             type="text"
             name="fuel"
-            value={vehicle.data.fuel}
+            value={vehicle.data && vehicle.data.fuel}
             onChange={handleChange}
           />
         </div>
@@ -126,7 +129,7 @@ const UpdateVehicleForm = () => {
           <input
               type="text"
               name="price"
-              value={vehicle.data.price}
+              value={vehicle.data && vehicle.data.price}
               onChange={handleChange}
             />
           </div>
@@ -135,7 +138,7 @@ const UpdateVehicleForm = () => {
             <input
               type="text"
               name="imageURL"
-              value={vehicle.data.imageURL}
+              value={vehicle.data && vehicle.data.imageURL}
               onChange={handleChange}
               placeholder="Enter Image URL"
             />
