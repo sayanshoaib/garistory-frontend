@@ -34,15 +34,44 @@ const ServiceCenter = () => {
   };
 
   return (
-    <div className="service-center-list">
+//     <div className="service-center-list">
+//       <h1>Service Centers</h1>
+
+//       {serviceCenters.length === 0 ? (
+//         <p>Loading service centers...</p>
+//       ) : (
+//         <ul>
+//           {serviceCenters.map((serviceCenter) => (
+//             <li key={serviceCenter.serviceCenterID} className="service-center-item">
+//               <h2>{serviceCenter.name}</h2>
+//               <p>Email: {serviceCenter.email}</p>
+//               <p>
+//                 Address: {serviceCenter.address.name}, {serviceCenter.address.street},{" "}
+//                 {serviceCenter.address.zipcode}, {serviceCenter.address.country}
+//               </p>
+//               <br />
+//               <div>
+//                 <Link to={`/service-center/update/${serviceCenter.serviceCenterID}`}>
+//                   <button>Update</button>
+//                 </Link>
+//                 <button onClick={() => handleDelete(serviceCenter.serviceCenterID)}>Delete</button>
+//               </div>
+//             </li>
+//           ))}
+//         </ul>
+//       )}
+//     </div>
+//   );
+// };
+<div className="service-center-list">
       <h1>Service Centers</h1>
 
       {serviceCenters.length === 0 ? (
         <p>Loading service centers...</p>
       ) : (
-        <ul>
+        <div className="service-center-grid">
           {serviceCenters.map((serviceCenter) => (
-            <li key={serviceCenter.serviceCenterID} className="service-center-item">
+            <div key={serviceCenter.serviceCenterID} className="service-center-item">
               <h2>{serviceCenter.name}</h2>
               <p>Email: {serviceCenter.email}</p>
               <p>
@@ -56,12 +85,14 @@ const ServiceCenter = () => {
                 </Link>
                 <button onClick={() => handleDelete(serviceCenter.serviceCenterID)}>Delete</button>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
 };
+
+
 
 export default ServiceCenter;

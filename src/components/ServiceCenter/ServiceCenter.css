@@ -5,7 +5,17 @@
   width: 60%;
   margin: 50px auto;
 }
+.service-center-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
 
+.service-center-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 .service-center-item {
   background-color: rgb(35, 42, 62);
   border-radius: 10px;
