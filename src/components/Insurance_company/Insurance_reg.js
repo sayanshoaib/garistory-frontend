@@ -23,7 +23,7 @@ const InsuranceComReg = () => {
     licenseStatus: "",
     issuingAuthority: "",
   });
-  const [contactNumber, setContactNumber] = useState("");
+  // const [contactNumber, setContactNumber] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,7 +38,7 @@ const InsuranceComReg = () => {
       autoCoverage,
       lifeCoverage,
       licenseInformation,
-      contactNumber,
+      // contactNumber,
     };
 
     

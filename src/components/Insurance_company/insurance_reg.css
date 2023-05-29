@@ -21,7 +21,8 @@
   
   .insurance-company-form input[type="text"],
   .insurance-company-form input[type="email"],
-  .insurance-company-form input[type="password"] {
+  .insurance-company-form input[type="password"],
+  .insurance-company-form input[type="boolean"] {
     width: 300px;
     padding: 12px 20px;
     margin: 8px 0;
