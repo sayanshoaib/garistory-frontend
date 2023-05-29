@@ -23,7 +23,7 @@ const InsuranceComReg = () => {
     licenseStatus: "",
     issuingAuthority: "",
   });
-  const [contactNumber, setContactNumber] = useState("");
+  // const [contactNumber, setContactNumber] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,13 +38,13 @@ const InsuranceComReg = () => {
       autoCoverage,
       lifeCoverage,
       licenseInformation,
-      contactNumber,
+      // contactNumber,
     };
 
     
     try {
       const response = await axios.post(
-        "http://localhost:8080/service-center",
+        "http://localhost:8080/insurance-companies",
         data,
         {
           headers: {
