@@ -51,6 +51,16 @@
     border-radius: 18px;
     color: #ecf0f1;
   }
+  .acc-form-part input[type="file"] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+  }
   .acc-form-part textarea
   {
     width: 300px;

@@ -110,20 +110,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="form-group">
-  <label htmlFor="contactNumber" className="label">
-    Contact Number:
-  </label>
-  <input
-    type="text"
-    id="contactNumber"
-    name="contactNumber"
-    value={contactNumber}
-    onChange={(e) => setContactNumber(e.target.value)}
-    placeholder="Enter Contact Number"
-    className="input"
-  />
-</div>
+        
         <div className="form-group">
           <label htmlFor="addressName" className="label">
             Address Name:
@@ -218,7 +205,7 @@ const InsuranceComReg = () => {
             Auto Coverage:
           </label>
           <input
-            type="text"
+            type="boolean"
             id="autoCoverage"
             name="autoCoverage"
             value={autoCoverage}
@@ -232,7 +219,7 @@ const InsuranceComReg = () => {
             Life Coverage:
           </label>
           <input
-            type="text"
+            type="boolean"
             id="lifeCoverage"
             name="lifeCoverage"
             value={lifeCoverage}

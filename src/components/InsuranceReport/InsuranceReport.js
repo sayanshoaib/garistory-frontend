@@ -192,7 +192,7 @@ const InsuranceReport=() =>{
         <div className="acc-form-field">
             <label htmlFor="AccidentImageUrl">Accident Image URL:</label>
             <input
-              type="text"
+              type="file"
               id="AccidentImageUrl"
               value={accidentImageUrl}
               onChange={(e) => setAccidentImageUrl(e.target.value)}
