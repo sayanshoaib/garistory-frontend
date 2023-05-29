@@ -62,7 +62,7 @@ function App() {
           element: <ServiceCenter></ServiceCenter>
         },
         {
-          path: "/service_center_form",
+          path: "/car_servicing_form",
           element: <CarServicingform></CarServicingform>
         },
         {

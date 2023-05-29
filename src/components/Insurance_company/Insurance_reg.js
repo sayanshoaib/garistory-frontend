@@ -23,6 +23,7 @@ const InsuranceComReg = () => {
     licenseStatus: "",
     issuingAuthority: "",
   });
+  const [contactNumber, setContactNumber] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,6 +38,7 @@ const InsuranceComReg = () => {
       autoCoverage,
       lifeCoverage,
       licenseInformation,
+      contactNumber,
     };
 
     
@@ -68,7 +70,7 @@ const InsuranceComReg = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="InsuranceComID" className="label">
-            Service Center ID:
+            Insurance Company ID:
           </label>
           <input
             type="text"
@@ -108,6 +110,20 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
+        <div className="form-group">
+  <label htmlFor="contactNumber" className="label">
+    Contact Number:
+  </label>
+  <input
+    type="text"
+    id="contactNumber"
+    name="contactNumber"
+    value={contactNumber}
+    onChange={(e) => setContactNumber(e.target.value)}
+    placeholder="Enter Contact Number"
+    className="input"
+  />
+</div>
         <div className="form-group">
           <label htmlFor="addressName" className="label">
             Address Name:
