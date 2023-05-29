@@ -90,7 +90,7 @@ const CarServicingform = () =>{
         return (
             <div className="root">
                 <form onSubmit={handleSubmit2}>
-          <div className="service-vehicle-form">
+          {/* <div className="service-vehicle-form">
             <h2>Information We have on Vehicle</h2>
             
               <div>
@@ -178,7 +178,7 @@ const CarServicingform = () =>{
               </div>
               <button type="submit">Update Vehicle</button>
            
-          </div>
+          </div> */}
 
 
 

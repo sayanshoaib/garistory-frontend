@@ -13,18 +13,33 @@ const InsuranceComReg = () => {
     country: "",
   });
   const [password, setPassword] = useState("");
+   const [registrationNumber, setRegistrationNumber] = useState("");
+  const [autoCoverage, setAutoCoverage] = useState("");
+  const [lifeCoverage, setLifeCoverage] = useState("");
+  const [licenseInformation, setLicenseInformation] = useState({
+    licenseNumber: "",
+    licenseType: "",
+    validityPeriod: "",
+    licenseStatus: "",
+    issuingAuthority: "",
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const data = {
-      serviceCenterID,
+      InsuranceComrID,
       name,
       email,
       address,
       password,
+      registrationNumber,
+      autoCoverage,
+      lifeCoverage,
+      licenseInformation,
     };
 
+    
     try {
       const response = await axios.post(
         "http://localhost:8080/service-center",
@@ -59,13 +74,13 @@ const InsuranceComReg = () => {
             type="text"
             id="InsuranceComID"
             name="InsuranceComID"
-            value={InsuranceComID}
+            value={InsuranceComrID}
             onChange={(e) => setInsuranceComID(e.target.value)}
-            placeholder="Enter Service Center ID"
+            placeholder="Enter Insurance Company ID"
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="name" className="label">
             Name:
           </label>
@@ -79,7 +94,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="email" className="label">
             Email:
           </label>
@@ -93,7 +108,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="addressName" className="label">
             Address Name:
           </label>
@@ -112,14 +127,13 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="street" className="label">
             Street:
           </label>
           <input
             type="text"
-            id="street"
-            name="street"
+            id="street" name="street"
             value={address.street}
             onChange={(e) =>
               setAddress((prevState) => ({
@@ -131,7 +145,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="zipcode" className="label">
             Zipcode:
           </label>
@@ -150,7 +164,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="country" className="label">
             Country:
           </label>
@@ -169,7 +183,7 @@ const InsuranceComReg = () => {
             className="input"
           />
         </div>
-        <div className="insform-group">
+        <div className="form-group">
           <label htmlFor="password" className="label">
             Password:
           </label>
@@ -180,6 +194,128 @@ const InsuranceComReg = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter Your Password"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="autoCoverage" className="label">
+            Auto Coverage:
+          </label>
+          <input
+            type="text"
+            id="autoCoverage"
+            name="autoCoverage"
+            value={autoCoverage}
+            onChange={(e) => setAutoCoverage(e.target.value)}
+            placeholder="Enter Auto Coverage"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="lifeCoverage" className="label">
+            Life Coverage:
+          </label>
+          <input
+            type="text"
+            id="lifeCoverage"
+            name="lifeCoverage"
+            value={lifeCoverage}
+            onChange={(e) => setLifeCoverage(e.target.value)}
+            placeholder="Enter Life Coverage"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="licenseNumber" className="label">
+            License Number:
+          </label>
+          <input
+            type="text"
+            id="licenseNumber"
+            name="licenseNumber"
+            value={licenseInformation.licenseNumber}
+            onChange={(e) =>
+              setLicenseInformation((prevState) => ({
+                ...prevState,
+                licenseNumber: e.target.value,
+              }))
+            }
+            placeholder="Enter License Number"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="licenseType" className="label">
+            License Type:
+          </label>
+          <input
+            type="text"
+            id="licenseType"
+            name="licenseType"
+            value={licenseInformation.licenseType}
+            onChange={(e) =>
+              setLicenseInformation((prevState) => ({
+                ...prevState,
+                licenseType: e.target.value,
+              }))
+            }
+            placeholder="Enter License Type"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="validityPeriod" className="label">
+            Validity Period:
+          </label>
+          <input type="text"
+            id="validityPeriod"
+            name="validityPeriod"
+            value={licenseInformation.validityPeriod}
+            onChange={(e) =>
+              setLicenseInformation((prevState) => ({
+                ...prevState,
+                validityPeriod: e.target.value,
+              }))
+            }
+            placeholder="Enter Validity Period"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="licenseStatus" className="label">
+            License Status:
+          </label>
+          <input
+            type="text"
+            id="licenseStatus"
+            name="licenseStatus"
+            value={licenseInformation.licenseStatus}
+            onChange={(e) =>
+              setLicenseInformation((prevState) => ({
+                ...prevState,
+                licenseStatus: e.target.value,
+              }))
+            }
+            placeholder="Enter License Status"
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="issuingAuthority" className="label">
+            Issuing Authority:
+          </label>
+          <input
+            type="text"
+            id="issuingAuthority"
+            name="issuingAuthority"
+            value={licenseInformation.issuingAuthority}
+            onChange={(e) =>
+              setLicenseInformation((prevState) => ({
+                ...prevState,
+                issuingAuthority: e.target.value,
+              }))
+            }
+            placeholder="Enter Issuing Authority"
             className="input"
           />
         </div>

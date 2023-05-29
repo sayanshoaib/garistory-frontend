@@ -17,6 +17,7 @@ import ServiceCenter from "./components/ServiceCenter/ServiceCenter";
 import UpdateVehicleForm from "./components/UpdateVehicleForm/UpdateVehicleForm";
 import UpdateServiceCenterReg from "./components/UpdateServiceCenterReg/UpdateServiceCenterReg";
 import InsuranceComReg from "./components/Insurance_company/Insurance_reg";
+import CarServicingform from "./components/CarServicingform/CarServicingform";
 
 
 function App() {
@@ -59,6 +60,10 @@ function App() {
         {
           path: "/service_center",
           element: <ServiceCenter></ServiceCenter>
+        },
+        {
+          path: "/service_center_form",
+          element: <CarServicingform></CarServicingform>
         },
         {
           path: "/signUp",
