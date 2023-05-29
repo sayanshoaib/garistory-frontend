@@ -1,0 +1,90 @@
+.acc-form-part {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
+  .acc-form-part {
+    background-color: rgb(35, 42, 62);
+    border-radius: 18px;
+    padding: 30px;
+    width: 40%;
+    margin: 50px auto;
+  }
+  
+  .acc-form-part h2 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+  }
+  
+  .acc-form-part form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .acc-form-part label {
+    font-size: 18px;
+    color: #ecf0f1;
+    margin-right: 10px;
+  }
+  
+  .acc-form-part input[type="text"] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+  }
+  .acc-form-part input[type="time"] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+  }
+  .acc-form-part textarea
+  {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+
+  }
+  
+  .acc-form-part input:focus {
+    outline: none;
+    border-color: orange;
+  }
+  
+  .acc-form-container button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+  }
+  
+  .acc-form-container button:hover {
+    background-color: orange;
+  }
+  
+  .acc-form-container button:active {
+    transform: translateY(1px);
+  }
+  

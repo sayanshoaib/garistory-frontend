@@ -18,6 +18,8 @@ import UpdateVehicleForm from "./components/UpdateVehicleForm/UpdateVehicleForm"
 import UpdateServiceCenterReg from "./components/UpdateServiceCenterReg/UpdateServiceCenterReg";
 import InsuranceComReg from "./components/Insurance_company/Insurance_reg";
 import CarServicingform from "./components/CarServicingform/CarServicingform";
+import InsuranceReport from "./components/InsuranceReport/InsuranceReport";
+
 
 
 function App() {
@@ -38,6 +40,10 @@ function App() {
         {
           path: "/entry",
           element: <VehicleEntry></VehicleEntry>,
+        },
+        {
+          path: "/insurance_report",
+          element: <InsuranceReport></InsuranceReport>,
         },
         {
           path: "/service_entry",
