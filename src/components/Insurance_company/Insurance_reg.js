@@ -44,7 +44,7 @@ const InsuranceComReg = () => {
     
     try {
       const response = await axios.post(
-        "http://localhost:8080/service-center",
+        "http://localhost:8080/insurance-companies",
         data,
         {
           headers: {
