@@ -21,7 +21,7 @@
   
   .insurance-company-form input[type="text"],
   .insurance-company-form input[type="email"],
-  .insurance-company-form input[type="password"]
+  .insurance-company-form input[type="password"],
   .insurance-company-form input[type="checkbox"] 
   {
     width: 300px;

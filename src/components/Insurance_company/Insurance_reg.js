@@ -205,7 +205,7 @@ const InsuranceComReg = () => {
             Auto Coverage:
           </label>
           <input
-            type="boolean"
+            type="checkbox"
             id="autoCoverage"
             name="autoCoverage"
             value={autoCoverage}
@@ -219,7 +219,7 @@ const InsuranceComReg = () => {
             Life Coverage:
           </label>
           <input
-            type="boolean"
+            type="checkbox"
             id="lifeCoverage"
             name="lifeCoverage"
             value={lifeCoverage}
