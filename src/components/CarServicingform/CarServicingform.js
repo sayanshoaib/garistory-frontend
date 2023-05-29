@@ -16,6 +16,7 @@ const CarServicingform = () =>{
          const [dateOfService, setDateOfService] = useState("");
          const [customerSignature, setCustomerSignature] = useState("");
          const [servicingCenterSignature, setServicingCenterSignature] = useState("");
+         const [licensePlateNumber, setLicensePlateNumber] = useState("");
       
         useEffect(() => {
           fetchVehicleData(id);
@@ -43,14 +44,26 @@ const CarServicingform = () =>{
        // for entereing new info
         const handleSubmit2 = (event) => {
             event.preventDefault();
-        
+            event.preventDefault();
+
             // Perform form submission logic here
             // You can access the form values using the state variables defined above
-        
+            console.log("Mileage:", mileage);
+            console.log("Service Performed:", servicePerformed);
+            console.log("Technician Name:", technicianName);
+            console.log("License Plate Number:", licensePlateNumber);
+            console.log("Part Name:", partName);
+            console.log("Part Number:", partNumber);
+            console.log("Total Cost:", totalCost);
+            console.log("Date of Service:", dateOfService);
+            console.log("Customer Signature:", customerSignature);
+            console.log("Servicing Center Signature:", servicingCenterSignature);
+          
             // Reset form fields
             setMileage("");
             setServicePerformed("");
             setTechnicianName("");
+            setLicensePlateNumber("");
             setPartName("");
             setPartNumber("");
             setTotalCost("");
@@ -253,6 +266,16 @@ const CarServicingform = () =>{
             required
           />
         </div>
+        <div>
+  <label htmlFor="licensePlateNumber">License Plate Number:</label>
+  <input
+    type="text"
+    id="licensePlateNumber"
+    value={licensePlateNumber}
+    onChange={(e) => setLicensePlateNumber(e.target.value)}
+    required
+  />
+</div>
         <div>
           <label htmlFor="customerSignature">Customer Signature:</label>
           <input
