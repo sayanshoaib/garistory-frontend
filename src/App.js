@@ -16,6 +16,7 @@ import VehicleForm from "./components/VehicleForm/VehicleForm";
 import ServiceCenter from "./components/ServiceCenter/ServiceCenter";
 import UpdateVehicleForm from "./components/UpdateVehicleForm/UpdateVehicleForm";
 import UpdateServiceCenterReg from "./components/UpdateServiceCenterReg/UpdateServiceCenterReg";
+import InsuranceComReg from "./components/Insurance_company/Insurance_reg";
 
 
 function App() {
@@ -48,6 +49,11 @@ function App() {
         {
           path: "/service_center_reg",
           element: <ServiceCenterReg></ServiceCenterReg>,
+        },
+        
+        {
+          path: "/insurance_com_reg",
+          element: <InsuranceComReg></InsuranceComReg>,
         },
 
         {

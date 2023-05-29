@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./ServiceCenterReg.css";
+import "./insurance_reg.css";
 
 const InsuranceComReg = () => {
   const [InsuranceComrID, setInsuranceComID] = useState("");

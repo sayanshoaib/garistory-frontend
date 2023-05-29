@@ -1,0 +1,68 @@
+.service-vehicle-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
+  .service-vehicle-form {
+    background-color: rgb(35, 42, 62);
+    border-radius: 18px;
+    padding: 30px;
+    width: 40%;
+    margin: 50px auto;
+  }
+  
+  .service-vehicle-form h2 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+  }
+  
+  .service-vehicle-form form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .service-vehicle-form label {
+    font-size: 18px;
+    color: #ecf0f1;
+    margin-right: 10px;
+  }
+  
+  .service-vehicle-form input[type="text"] {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgb(35, 42, 62);
+    border: 2px solid white;
+    border-radius: 18px;
+    color: #ecf0f1;
+  }
+  
+  .service-vehicle-form input:focus {
+    outline: none;
+    border-color: orange;
+  }
+  
+  .service-vehicle-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+  }
+  
+  .service-vehicle-form button:hover {
+    background-color: orange;
+  }
+  
+  .service-vehicle-form button:active {
+    transform: translateY(1px);
+  }
+  
