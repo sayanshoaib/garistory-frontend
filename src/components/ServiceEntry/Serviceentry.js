@@ -189,7 +189,7 @@ import GaristroyContract from './contracts/Garistroy.json'; // Replace with the 
       {/* Add input fields for recommendedFutureServices and partsUsed */}
       <label htmlFor="recommendedFutureServices">Recommended Future Services:</label>
         <input
-          type="number"
+          type="checkbox"
           id="recommendedFutureServices"
           value={recommendedFutureServices}
           onChange={handleRecommendedFutureServicesChange}
