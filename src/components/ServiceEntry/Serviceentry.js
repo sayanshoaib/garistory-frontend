@@ -1,214 +1,146 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import { ethers } from 'ethers';
 import './Serviceentry.css';
 import Web3 from 'web3';
 import GaristroyContract from './contracts/Garistroy.json'; // Replace with the actual contract ABI
+
+const contractAddress = 'YOUR_CONTRACT_ADDRESS';
+
+const serviceTypes = [
+  'OIL_CHANGE',
+  'TIRE_ROTATION',
+  'BRAKE_INSPECTION',
+  'ENGINE_TUNEUP',
+  'TRANSMISSION_FLUID_CHANGE',
+  'COOLANT_FLUSH',
+  'ALIGNMENT'
+];
 
 
   const Serviceentry = () =>{
     const [ownerEmail, setOwnerEmail] = useState('');
   const [vin, setVin] = useState('');
   const [mechanicSignature, setMechanicSignature] = useState('');
-  const [costOfService, setCostOfService] = useState(0);
-  const [mileage, setMileage] = useState(0);
-  const [odometerReading, setOdometerReading] = useState(0);
-  const [description, setDescription] = useState('');
-  const [serviceType, setServiceType] = useState({
-    OIL_CHANGE: false,
-    TIRE_ROTATION: false,
-    BRAKE_INSPECTION: false,
-    ENGINE_TUNEUP: false,
-    TRANSMISSION_FLUID_CHANGE: false,
-    COOLANT_FLUSH: false,
-    ALIGNMENT: false
-  });
+  const [costOfService, setCostOfService] = useState('');
+  const [selectedServiceTypes, setSelectedServiceTypes] = useState([]);
   const [recommendedFutureServices, setRecommendedFutureServices] = useState([]);
   const [partsUsed, setPartsUsed] = useState([]);
-  const web3 = new Web3(window.ethereum);
-  const handleServicingRecord = async () => {
+  const [mileage, setMileage] = useState('');
+  const [odometerReading, setOdometerReading] = useState('');
+  const [description, setDescription] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!window.ethereum) {
+      alert('Please install MetaMask to interact with the Ethereum network.');
+      return;
+    }
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+
     try {
-      const accounts = await web3.eth.requestAccounts();
-      const networkId = await web3.eth.net.getId();
-      const deployedNetwork = GaristroyContract.networks[networkId];
-      const contractInstance = new web3.eth.Contract(
-        GaristroyContract.abi,
-        deployedNetwork.address
+      const contract = new ethers.Contract(contractAddress, GaristroyContract.abi, signer);
+
+      const serviceTypeValues = selectedServiceTypes.map((type) => GaristroyContract.VehicleServiceType[type]);
+
+      const tx = await contract.recordServicing(
+        ownerEmail,
+        vin,
+        mechanicSignature,
+        ethers.utils.parseEther(costOfService),
+        serviceTypeValues,
+        recommendedFutureServices.map((type) => GaristroyContract.VehicleServiceType[type]),
+        partsUsed,
+        parseInt(mileage),
+        parseInt(odometerReading),
+        description
       );
 
-      const selectedServiceTypes = Object.entries(serviceType)
-        .filter(([, value]) => value)
-        .map(([key]) => key);
+      await tx.wait();
 
-      await contractInstance.methods
-        .recordServicing(
-          ownerEmail,
-          vin,
-          mechanicSignature,
-          costOfService,
-          selectedServiceTypes,
-          recommendedFutureServices,
-          partsUsed,
-          mileage,
-          odometerReading,
-          description
-        )
-        .send({ from: accounts[0] });
-
-      // Reset the input fields
-      setOwnerEmail('');
-      setVin('');
-      setMechanicSignature('');
-      setCostOfService(0);
-      setMileage(0);
-      setOdometerReading(0);
-      setDescription('');
-
-      console.log('Servicing record saved successfully!');
+      alert('Servicing record submitted successfully!');
     } catch (error) {
-      console.error('Error saving servicing record:', error);
+      console.error(error);
+      alert('An error occurred while submitting the servicing record.');
     }
   };
 
-  const handleServiceTypeChange = (event) => {
-    const { name, checked } = event.target;
-    setServiceType((prevServiceType) => ({
-      ...prevServiceType,
-      [name]: checked
-    }));
-  };
-
-  const handleRecommendedFutureServicesChange = (event) => {
-    const { value } = event.target;
-    setRecommendedFutureServices((prevRecommendedFutureServices) =>
-      prevRecommendedFutureServices.includes(value)
-        ? prevRecommendedFutureServices.filter((service) => service !== value)
-        : [...prevRecommendedFutureServices, value]
-    );
-  };
-
-  const handlePartsUsedChange = (event) => {
-    const { value } = event.target;
-    setPartsUsed((prevPartsUsed) =>
-      prevPartsUsed.includes(value)
-        ? prevPartsUsed.filter((part) => part !== value)
-        : [...prevPartsUsed, value]
-    );
-  };
-  
-
   return (
-    <div>
-    <h1>Servicing Record Form</h1>
-    <form onSubmit={(e) => e.preventDefault()}>
-      <label htmlFor="ownerEmail">Owner Email:</label>
-      <input
-        type="text"
-        id="ownerEmail"
-        value={ownerEmail}
-        onChange={(e) => setOwnerEmail(e.target.value)}
-      />
-      <br />
+    <div className="App">
+      <h1>Garistroy Servicing Record</h1>
 
-      <label htmlFor="vin">VIN:</label>
-      <input
-        type="text"
-        id="vin"
-        value={vin}
-        onChange={(e) => setVin(e.target.value)}
-      />
-      <br />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="ownerEmail">Owner Email:</label>
+        <input type="email" id="ownerEmail" value={ownerEmail} onChange={(e) => setOwnerEmail(e.target.value)} required />
 
-      <label htmlFor="mechanicSignature">Mechanic Signature:</label>
-      <input
-        type="text"
-        id="mechanicSignature"
-        value={mechanicSignature}
-        onChange={(e) => setMechanicSignature(e.target.value)}
-      />
-      <br />
+        <label htmlFor="vin">VIN:</label>
+        <input type="text" id="vin" value={vin} onChange={(e) => setVin(e.target.value)} required />
 
-      <label htmlFor="costOfService">Cost of Service:</label>
-      <input
-        type="number"
-        idvalue={costOfService}
-        onChange={(e) => setCostOfService(e.target.value)}
-      />
-      <br />
+        
 
-      <label htmlFor="mileage">Mileage:</label>
-      <input
-        type="number"
-        id="mileage"
-        value={mileage}
-        onChange={(e) => setMileage(e.target.value)}
-      />
-      <br />
+        <label htmlFor="selectedServiceTypes">Service Types:</label>
+        {serviceTypes.map((type) => (
+          <div key={type}>
+            <input
+              type="checkbox"
+              id={type}checked={selectedServiceTypes.includes(type)}
+              onChange={(e) => {
+                if (e.target.checked) {
+                  setSelectedServiceTypes([...selectedServiceTypes, type]);
+                } else {
+                  setSelectedServiceTypes(selectedServiceTypes.filter((t) => t !== type));
+                }
+              }}
+            />
+            <label htmlFor={type}>{type}</label>
+          </div>
+        ))}
 
-      <label htmlFor="odometerReading">Odometer Reading:</label>
-      <input
-        type="number"
-        id="odometerReading"
-        value={odometerReading}
-        onChange={(e) => setOdometerReading(e.target.value)}
-      />
-      <br />
+        <label htmlFor="recommendedFutureServices">Recommended Future Services:</label>
+        {serviceTypes.map((type) => (
+          <div key={type}>
+            <input
+              type="checkbox"
+              id={type}
+              checked={recommendedFutureServices.includes(type)}
+              onChange={(e) => {
+                if (e.target.checked) {
+                  setRecommendedFutureServices([...recommendedFutureServices, type]);
+                } else {
+                  setRecommendedFutureServices(recommendedFutureServices.filter((t) => t !== type));
+                }
+              }}
+            />
+            <label htmlFor={type}>{type}</label>
+          </div>
+        ))}
 
-      <label htmlFor="description">Description:</label>
-      <input
-        type="text"
-        id="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <br />
-
-      <h2>Service Type:</h2>
-      <label htmlFor="OIL_CHANGE">Oil Change</label>
-      <input type="checkbox" id="OIL_CHANGE" />
-      
-      <label htmlFor="TIRE_ROTATION">TIRE ROTATION</label>
-      <input type="checkbox" id="TIRE_ROTATION" />
-     
-      <label htmlFor=" BRAKE_INSPECTION"> BRAKE INSPECTION</label>
-      <input type="checkbox" id=" BRAKE_INSPECTION" />
-      
-      <label htmlFor="ENGINE_TUNEUP">ENGINE TUNEUP</label>
-      <input type="checkbox" id="ENGINE_TUNEUP" />
-      
-      <label htmlFor="TRANSMISSION_FLUID_CHANGE">TRANSMISSION FLUID CHANGE</label>
-      <input type="checkbox" id="TRANSMISSION_FLUID_CHANGEO" />
-
-      <label htmlFor="COOLANT_FLUSH">COOLANT FLUSH</label>
-      <input type="checkbox" id="COOLANT_FLUSH" />
-
-      <label htmlFor="ALIGNMENT">ALIGNMENT</label>
-      <input type="checkbox" id="ALIGNMENT" />
-      {/* Add similar checkboxes for other service types */}
-
-      {/* Add input fields for recommendedFutureServices and partsUsed */}
-      <label htmlFor="recommendedFutureServices">Recommended Future Services:</label>
-        <input
-          type="checkbox"
-          id="recommendedFutureServices"
-          value={recommendedFutureServices}
-          onChange={handleRecommendedFutureServicesChange}
-        />
-        <br></br>
         <label htmlFor="partsUsed">Parts Used:</label>
-   <input
-  type="text"
-  id="partsUsed"
-  value={partsUsed}
-  onChange={handlePartsUsedChange}
-   />
-<br />
-      <button type="submit" onClick={handleServicingRecord}>
-        Save Servicing Record
-      </button>
-    </form>
-  </div>
-);
-};
+        <input type="text" id="partsUsed" value={partsUsed} onChange={(e) => setPartsUsed(e.target.value)} required />
+
+        <label htmlFor="mileage">Mileage:</label>
+        <input type="number" id="mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} required />
+
+        <label htmlFor="odometerReading">Odometer Reading:</label>
+        <input type="number" id="odometerReading" value={odometerReading} onChange={(e) => setOdometerReading(e.target.value)} required />
+
+        <label htmlFor="description">Description:</label>
+        <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
+
+        <label htmlFor="mechanicSignature">Mechanic Signature:</label>
+        <input type="text" id="mechanicSignature" value={mechanicSignature} onChange={(e) => setMechanicSignature(e.target.value)} required />
+
+        <label htmlFor="costOfService">Cost of Service:</label>
+        <input type="number" id="costOfService" value={costOfService} onChange={(e) => setCostOfService(e.target.value)} required />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
 
 export default Serviceentry
