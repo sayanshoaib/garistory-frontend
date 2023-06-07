@@ -1,215 +1,214 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-import '../../App.css';
 import './Serviceentry.css';
-import { Button } from '../Button/Button';
+import Web3 from 'web3';
+import GaristroyContract from './contracts/Garistroy.json'; // Replace with the actual contract ABI
 
-function Serviceentry() {
 
+  const Serviceentry = () =>{
+    const [ownerEmail, setOwnerEmail] = useState('');
+  const [vin, setVin] = useState('');
+  const [mechanicSignature, setMechanicSignature] = useState('');
+  const [costOfService, setCostOfService] = useState(0);
+  const [mileage, setMileage] = useState(0);
+  const [odometerReading, setOdometerReading] = useState(0);
+  const [description, setDescription] = useState('');
+  const [serviceType, setServiceType] = useState({
+    OIL_CHANGE: false,
+    TIRE_ROTATION: false,
+    BRAKE_INSPECTION: false,
+    ENGINE_TUNEUP: false,
+    TRANSMISSION_FLUID_CHANGE: false,
+    COOLANT_FLUSH: false,
+    ALIGNMENT: false
+  });
+  const [recommendedFutureServices, setRecommendedFutureServices] = useState([]);
+  const [partsUsed, setPartsUsed] = useState([]);
+  const web3 = new Web3(window.ethereum);
+  const handleServicingRecord = async () => {
+    try {
+      const accounts = await web3.eth.requestAccounts();
+      const networkId = await web3.eth.net.getId();
+      const deployedNetwork = GaristroyContract.networks[networkId];
+      const contractInstance = new web3.eth.Contract(
+        GaristroyContract.abi,
+        deployedNetwork.address
+      );
+
+      const selectedServiceTypes = Object.entries(serviceType)
+        .filter(([, value]) => value)
+        .map(([key]) => key);
+
+      await contractInstance.methods
+        .recordServicing(
+          ownerEmail,
+          vin,
+          mechanicSignature,
+          costOfService,
+          selectedServiceTypes,
+          recommendedFutureServices,
+          partsUsed,
+          mileage,
+          odometerReading,
+          description
+        )
+        .send({ from: accounts[0] });
+
+      // Reset the input fields
+      setOwnerEmail('');
+      setVin('');
+      setMechanicSignature('');
+      setCostOfService(0);
+      setMileage(0);
+      setOdometerReading(0);
+      setDescription('');
+
+      console.log('Servicing record saved successfully!');
+    } catch (error) {
+      console.error('Error saving servicing record:', error);
+    }
+  };
+
+  const handleServiceTypeChange = (event) => {
+    const { name, checked } = event.target;
+    setServiceType((prevServiceType) => ({
+      ...prevServiceType,
+      [name]: checked
+    }));
+  };
+
+  const handleRecommendedFutureServicesChange = (event) => {
+    const { value } = event.target;
+    setRecommendedFutureServices((prevRecommendedFutureServices) =>
+      prevRecommendedFutureServices.includes(value)
+        ? prevRecommendedFutureServices.filter((service) => service !== value)
+        : [...prevRecommendedFutureServices, value]
+    );
+  };
+
+  const handlePartsUsedChange = (event) => {
+    const { value } = event.target;
+    setPartsUsed((prevPartsUsed) =>
+      prevPartsUsed.includes(value)
+        ? prevPartsUsed.filter((part) => part !== value)
+        : [...prevPartsUsed, value]
+    );
+  };
   
 
   return (
-    <main className='main_s1'>
+    <div>
+    <h1>Servicing Record Form</h1>
+    <form onSubmit={(e) => e.preventDefault()}>
+      <label htmlFor="ownerEmail">Owner Email:</label>
+      <input
+        type="text"
+        id="ownerEmail"
+        value={ownerEmail}
+        onChange={(e) => setOwnerEmail(e.target.value)}
+      />
+      <br />
 
-      <h1>Vehicle Servicing Data Form</h1>
+      <label htmlFor="vin">VIN:</label>
+      <input
+        type="text"
+        id="vin"
+        value={vin}
+        onChange={(e) => setVin(e.target.value)}
+      />
+      <br />
 
-      <form className='form_s1' >
-        <div>
+      <label htmlFor="mechanicSignature">Mechanic Signature:</label>
+      <input
+        type="text"
+        id="mechanicSignature"
+        value={mechanicSignature}
+        onChange={(e) => setMechanicSignature(e.target.value)}
+      />
+      <br />
 
-          <div className='text_s1' >
+      <label htmlFor="costOfService">Cost of Service:</label>
+      <input
+        type="number"
+        idvalue={costOfService}
+        onChange={(e) => setCostOfService(e.target.value)}
+      />
+      <br />
 
+      <label htmlFor="mileage">Mileage:</label>
+      <input
+        type="number"
+        id="mileage"
+        value={mileage}
+        onChange={(e) => setMileage(e.target.value)}
+      />
+      <br />
 
-            <div><h1> </h1></div>
-            <div className='vehicle_info'>
-            <div><h2> Vehicle information</h2></div>
-              <div className='input_s1'>
-                <div className='input'>
-                <label htmlFor='vin'>VIN</label>
-                <input classname='i' type='number' name='vehicleID' placeholder='Enter Vehicle Identification Number'></input>
-                 </div>
-                <div className='input'>
-                  <label htmlFor='make'>Make</label>
-                  <input type='text' name='make' placeholder='Enter the name of manufacturer'></input>
+      <label htmlFor="odometerReading">Odometer Reading:</label>
+      <input
+        type="number"
+        id="odometerReading"
+        value={odometerReading}
+        onChange={(e) => setOdometerReading(e.target.value)}
+      />
+      <br />
 
-                </div>
-                <div className='input'>
-                  <label htmlFor='model'>Model</label>
-                  <input type='text' name='model' placeholder='Enter the model number'></input>
+      <label htmlFor="description">Description:</label>
+      <input
+        type="text"
+        id="description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <br />
 
-                </div>
-                <div className='input'>
-                  <label htmlFor='year'>Year</label>
-                  <input type='date' name='year' placeholder='Enter the manufacturing year'></input>
+      <h2>Service Type:</h2>
+      <label htmlFor="OIL_CHANGE">Oil Change</label>
+      <input type="checkbox" id="OIL_CHANGE" />
+      
+      <label htmlFor="TIRE_ROTATION">TIRE ROTATION</label>
+      <input type="checkbox" id="TIRE_ROTATION" />
+     
+      <label htmlFor=" BRAKE_INSPECTION"> BRAKE INSPECTION</label>
+      <input type="checkbox" id=" BRAKE_INSPECTION" />
+      
+      <label htmlFor="ENGINE_TUNEUP">ENGINE TUNEUP</label>
+      <input type="checkbox" id="ENGINE_TUNEUP" />
+      
+      <label htmlFor="TRANSMISSION_FLUID_CHANGE">TRANSMISSION FLUID CHANGE</label>
+      <input type="checkbox" id="TRANSMISSION_FLUID_CHANGEO" />
 
-                </div>
-                <div className='input'>
-                  <label htmlFor='brand'>Brand</label>
-                  <input type='text' name='year' placeholder='Enter the brand name'></input>
+      <label htmlFor="COOLANT_FLUSH">COOLANT FLUSH</label>
+      <input type="checkbox" id="COOLANT_FLUSH" />
 
-                </div>
-                <div className='input'>
-                  <label htmlFor='price'>Lisence plate number</label>
-                  <input type='text' name='price' placeholder='Enter the price of vehicle'></input>
+      <label htmlFor="ALIGNMENT">ALIGNMENT</label>
+      <input type="checkbox" id="ALIGNMENT" />
+      {/* Add similar checkboxes for other service types */}
 
-                </div>
-              </div>
-            </div>
-            <div><h1>      </h1></div>
-
-
-
-
-            <div className='customer_info'>
-            <div><h2> Customer information</h2></div>
-              <div className='input_s2'>
-                <div className='input'>
-                <label htmlFor='name'>Name</label>
-                <input classname='i' type='text' name='customer_name' placeholder='Enter customer name'></input>
-                 </div>
-                <div className='input'>
-                  <label htmlFor='address'>Adress</label>
-                  <input type='text' name='address' placeholder='Enter the address of customer'></input>
-
-                </div>
-                <div className='input'>
-                  <label htmlFor='email'>Email</label>
-                  <input type='email' name='email' placeholder='Enter the email of customer'></input>
-
-                </div>
-                <div className='input'>
-                  <label htmlFor='contact'>Contact</label>
-                  <input type='number' name='contact' placeholder='Enter the contact number'></input>
-
-                </div>
-                <div className='input'>
-                  <label htmlFor='lisence_reg'>Lisence Registration Number</label>
-                  <input type='text' name='lisence_reg' placeholder='Enter the lisence registration number'></input>
-
-                </div>
-              </div>
-            </div>
-            <div><h1>      </h1></div>
-
-           
-
-          </div>
-
-        </div>
-
-        <div className='text_s1' >
-          <div><h1>      </h1></div>
-          <div className='service_details'>
-          <div><h2> Service Details</h2></div>
-            <div className='input'>
-              <label htmlFor='sdate'>Date of service</label>
-              <input type='date' name='sdate' placeholder=''></input>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='mileage'>Mileage</label>
-              <input type='text' name='mileage' placeholder='Enter the mileage of vehicle'></input>
-            </div>
-            <div className='input'>
-              <label htmlFor='technician'>Name of technician</label>
-              <input type='text' name='technician' placeholder='Enter the name of assigned technician'></input>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='type_of_service'>Services performed</label>
-              <input type='text' name='type_of_service' placeholder=''></input>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='repair'>List of made repair</label>
-              <input type='text' name='repair' placeholder=''></input>
-            </div>
-
-          </div>
-          <div><h1>      </h1></div>
-          
-
-          <div className='parts_used'>
-          <div><h2> parts used</h2></div>
-            <div className='input'>
-              <label htmlFor='pname'>Name of the part</label>
-              <input type='text' name='pname' placeholder=''></input>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='pnumber'>part Number</label>
-              <input type='number' name='pnumber' placeholder='Enter the part registration number'></input>
-            </div>
-            <div className='input'>
-                           <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--small'>
-                                 Add another part
-                           </Button>
-                           <div><h1>      </h1></div>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='quantity'>Total quantity of changed parts </label>
-              <input type='number' name='quantity' placeholder=''></input>
-            </div>
-
-            <div className='input'>
-              <label htmlFor='recommendation'>Recommendation</label>
-              <input type='text' name='recommendation' placeholder=''></input>
-            </div>
-
-            
-          </div>
-         
-          
-        </div>
-
-
-      </form>
-      <div><h1>      </h1></div>
-      <form className='form_s2' >
-      <div className='text_s1' >
-         
-          <div className='final'>
-          <div><h2> </h2></div>
-            <div className='input'>
-              <label htmlFor='date'>Date of service</label>
-              <input type='date' name='sate' placeholder=''></input>
-              
-            </div>
-            <div><h1>  &nbsp;  &nbsp;  </h1></div>
-            <div className='input'>
-              <label htmlFor='amount'>Total Amount</label>
-              <input type='text' name='amount' placeholder=''></input>
-            </div>
-            <div><h1>  &nbsp;  &nbsp;  </h1></div>
-            <div className='input'>
-              <label htmlFor='signature'>Customer Signature</label>
-              <input type='text' name='signature' placeholder=''></input>
-            </div>
-
-            
-
-            
-
-          </div>
-          
-          <div><h1>      </h1></div>
-          
-        </div>
-        </form>
-      <div className='input'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--small'
-        >
-          Submit
-        </Button>
-
-      </div>
-      <div><h1>      </h1></div>
-    </main>
-  )
-}
+      {/* Add input fields for recommendedFutureServices and partsUsed */}
+      <label htmlFor="recommendedFutureServices">Recommended Future Services:</label>
+        <input
+          type="number"
+          id="recommendedFutureServices"
+          value={recommendedFutureServices}
+          onChange={handleRecommendedFutureServicesChange}
+        />
+        <br></br>
+        <label htmlFor="partsUsed">Parts Used:</label>
+   <input
+  type="text"
+  id="partsUsed"
+  value={partsUsed}
+  onChange={handlePartsUsedChange}
+   />
+<br />
+      <button type="submit" onClick={handleServicingRecord}>
+        Save Servicing Record
+      </button>
+    </form>
+  </div>
+);
+};
 
 export default Serviceentry
