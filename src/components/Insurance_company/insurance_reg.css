@@ -1,5 +1,4 @@
 .insurance-company-form {
-<<<<<<< HEAD
   background-color: rgb(35, 42, 62);
   border-radius: 18px;
   padding: 30px;
@@ -56,13 +55,6 @@
 
 .insurance-company-form button:active {
   transform: translateY(1px);
-}
-=======
-    background-color: rgb(35, 42, 62);
-    border-radius: 18px;
-    padding: 30px;
-    width: 40%;
-    margin: 50px auto;
   }
   
   .insurance-company-form div {
@@ -115,5 +107,3 @@
   .insurance-company-form button:active {
     transform: translateY(1px);
   }
-  
->>>>>>> 8f38fc1 (last update)
