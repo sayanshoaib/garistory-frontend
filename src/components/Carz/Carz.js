@@ -95,9 +95,9 @@ function Cars() {
         <h2>Seller info</h2> <br />
 
         <h2>
-        Name: Hello World <br />
-        Place: Earth <br />
-        Payement: Bkash(XXX)
+        Name: Siam Sarker <br />
+        Place: Dhaka, Bangladesh <br />
+        Payement: Bkash(xxx)
         </h2>        
       </div>
   
