@@ -1,101 +1,189 @@
+.acc-form-container {
+  background-image: url('E:\12th trimester\GariStory_exe\garistory\public\images\accident.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+}
 .acc-form-part {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-  .acc-form-part {
-    background-color: rgb(35, 42, 62);
-    border-radius: 18px;
-    padding: 30px;
-    width: 40%;
-    margin: 50px auto;
-  }
-  
-  .acc-form-part h2 {
-    color: #ecf0f1;
-    margin-bottom: 20px;
-  }
-  
-  .acc-form-part form div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .acc-form-part label {
-    font-size: 18px;
-    color: #ecf0f1;
-    margin-right: 10px;
-  }
-  
-  .acc-form-part input[type="text"] {
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: rgb(35, 42, 62);
-    border: 2px solid white;
-    border-radius: 18px;
-    color: #ecf0f1;
-  }
-  .acc-form-part input[type="time"] {
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: rgb(35, 42, 62);
-    border: 2px solid white;
-    border-radius: 18px;
-    color: #ecf0f1;
-  }
-  .acc-form-part input[type="file"] {
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: rgb(35, 42, 62);
-    border: 2px solid white;
-    border-radius: 18px;
-    color: #ecf0f1;
-  }
-  
-  .acc-form-part textarea
-  {
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: rgb(35, 42, 62);
-    border: 2px solid white;
-    border-radius: 18px;
-    color: #ecf0f1;
 
-  }
-  
-  .acc-form-part input:focus {
-    outline: none;
-    border-color: orange;
-  }
-  
-  .acc-form-container button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: none;
-    font-size: 16px;
+.accident-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.acc-rep-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 15%;
+}
+.acc-form-field1 input {
+  border: 1px solid #333764;
+  margin: 2%;
+  background-color: rgb(153, 172, 212);
+  width: 145%;
+  font-size: medium;
+  border-radius: 15px;
+  padding: 4%;
+  font-size: large;
+ 
+}
+
+.acc-form-field1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.acc-form-field input,
+.acc-form-group input {
+  border: 1px solid #333764;
+  margin: 2%;
+  background-color: rgb(153, 172, 212);
+  width: 80%; /* Make all input fields 100% width */
+  font-size: medium;
+  border-radius: 15px;
+  padding: 2%;
+}
+.acc-form-field textarea,
+.acc-form-group textarea{
+  border: 1px solid #333764;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgb(153, 172, 212);
+  width: 80%; 
+  font-size: medium;
+  border-radius: 5px;
+  height: 45%;
+ 
+}
+
+.acc-form-part2 input{
+  border: 1px solid #333764;
+  margin: 2%;
+  background-color: rgb(153, 172, 212);
+  width: 30%; 
+  font-size: medium;
+  border-radius: 15px;
+  padding: 2%;
+  height: 2px;
+}
+
+ .acc-form-field1 button {
+  margin: 4%;
+  font-size: large;
+  color: white;
+  border-radius: 20px;
+  padding: 5%;
+  font-size: 20px;
+  background-color: hwb(39 9% 5%);
+  width: 90%; 
+  height: 40%;
+  text-wrap: nowrap;
+} 
+
+.acc-form-field button{
+  margin: 3%;
+  color: white;
+  border-radius: 20px;
+  padding: 1.5%;
+  font-size: 20px;
+  background-color: hwb(39 9% 5%);
+  width: 40%; 
+  height: 27%;
+  text-wrap: nowrap;
+} 
+ .acc-form-part2 button{
+  margin: 2%;
+  color: white;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 20px;
+  background-color: hwb(39 9% 5%);
+  width: 22%; 
+  text-wrap: nowrap;
+  height: 5%;
+ }
+ .accident-rep-submit{
+  margin: 2%;
+  font-size: large;
+  color: white;
+  border: solid 2px orange;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 17px;
+  background-color: rgb(11, 18, 36);
+  width: 15%; 
+  text-wrap: nowrap;
+  height: 3%;
+  font-size: x-large;
+
+ }
+ .acc-form-field2,.acc-form-field3{
+  margin: 2%;
+  font-size: larger;
+  text-align: left;
+ }
+ 
+ .acc-form-field2 button{
+  margin: 2%;
+  color: white;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 18px;
+  background-color: hwb(39 9% 5%);
+  width: 22%; 
+  text-wrap: nowrap;
+  height: 5%;}
+
+  .acc-form-field3 button{
+    margin: 1%;
     color: white;
-    background-color: orange;
-    cursor: pointer;
+    border-radius: 20px;
+    padding: 1%;
+    font-size: 18px;
+    background-color: hwb(39 9% 5%);
+    width: 9%; 
+    text-wrap: nowrap;
+    height: 1%;
+    text-align: left;
   }
-  
-  .acc-form-container button:hover {
-    background-color: orange;
-  }
-  
-  .acc-form-container button:active {
-    transform: translateY(1px);
-  }
-  
+ 
+.acc-form-field1 button:hover,
+.acc-form-part2 button:hover,.acc-form-field button:hover,.acc-form-field2 button:hover{
+  background-color: black;
+}
+.accident-rep-submit:hover{
+  background-color:#346791;
+}
+
+.acc-form-group {
+  margin-bottom: 4%;
+  margin-right: 4%;
+}
+
+
+
+.acc-rep-title,
+.acc-form-part,
+.acc-form-part1,
+.acc-form-part2 {
+  background-color: rgba(255, 255, 255, 0.07);
+  margin: 1%;
+  padding-top: 3%;
+  padding-bottom: 1%;
+  padding-right: 1%;
+  padding-left: 4%;
+  border-radius: 10px;
+}

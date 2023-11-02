@@ -24,7 +24,7 @@
   
 
   }
-  input[type = text] {
+  .input input[type = text] {
     width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -33,7 +33,7 @@
     border: 2px solid white;
   border-radius: 18px;
  }
- input[type = date] {
+ .input input[type = date] {
     width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -43,7 +43,7 @@
   border-radius: 18px;
   color:white;
  }
- input[type = file] {
+ .input input[type = file] {
     
     width: 300px;
   padding: 12px 20px;
@@ -53,7 +53,7 @@
     border: 2px solid white;
   border-radius: 18px;
  }
- input[type = number] {
+ .imput input[type = number] {
     width: 300px;
   padding: 12px 20px;
   margin: 8px 0;

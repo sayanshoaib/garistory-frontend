@@ -107,7 +107,7 @@ function Cars() {
         <h2>If you have any query write us</h2>
         <form className='query'>
           
-        <div className='input_form'>
+        <div className='input_form_car'>
               <input type='email' name='email' placeholder='Enter your email'></input>
               <br />
               <input type='textarea' name='email' placeholder='Enter your query'></input>

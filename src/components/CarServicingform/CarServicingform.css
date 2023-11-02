@@ -1,68 +1,151 @@
-.form-part {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
+.servicing-form-container {
+  background-image: url('E:\12th trimester\GariStory_exe\garistory\public\images\servicing1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+.servicing-form-container h1{
+  background-color: rgba(0, 0, 0, 0.68);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 25px;
+  padding: 1%;
 
-  .form-part {
-    background-color: rgb(35, 42, 62);
-    border-radius: 18px;
-    padding: 30px;
-    width: 40%;
-    margin: 50px auto;
-  }
+}
+
+.servicing-main-form{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+.servicing-main-form label{
+  font-family: 'Courier New', Courier, monospace;
+}
+.case1{
+  display: grid;
+  grid-template-columns: 1fr 2.5fr ; /* Two equal-width columns */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
+.servicing-main-form h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+  color: orange;
+  background-color: rgba(129, 106, 79, 0.25);
+  border-radius: 35px;
   
-  .form-part h2 {
-    color: #ecf0f1;
-    margin-bottom: 20px;
-  }
+}
+.form-part{
+  display: grid;
+  grid-template-columns: 1fr 1fr ; /* Two equal-width columns */
+  grid-gap: 10px; /* Adjust the gap between columns */
+  margin-bottom: 1%;
+  padding: 1%;
+  border-radius: 25px;
+}
+.case4,.case6{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+
+}
+
+.form-part4 ,.form-part5{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  grid-gap: 10px; /* Adjust the gap between columns */
+  margin-bottom: 1%;
+  padding: 3%;
+  gap: 4%;
+  border-radius: 25px;
+}
+
+.form-part4 button{
+  margin: 2%;
+  color: white;
+  border-radius: 20px;
+  padding: 1.5%;
+  font-size: 20px;
+  background-color: hwb(39 9% 5%);
+  width: 30%; 
+  height: 25%;
+  text-wrap: nowrap;
+}
+
+.remove-button button{
+  margin-left: 4%;
+  color: white;
+  border-radius: 20px;
+  padding: 1.5%;
+  font-size: 20px;
   
-  .form-part form div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+  background-color: hwb(39 9% 5%);
+  width: 18%; 
+  height: 25%;
+  text-wrap: nowrap;
+}
+
+.remove-button{
+  text-align: left;
+}
+.form-part4 input,.form-part5 input{
+  width: auto;
+  padding: 2%;
+  border-radius: 15px;
+  font-size: large;
+  background-color: rgb(233, 227, 219);
+  margin-right: 3%;
+  height: auto;
+}
+.form-part4 input[type="checkbox"] {
+  width: auto; /* Adjust the width to fit the checkbox */
+  padding: 0;
+  margin-right: 5px; /* Add some spacing between checkboxes */
+  height: auto; /* Adjust the height to fit the checkbox */
+  color: orange;
   
-  .form-part label {
-    font-size: 18px;
-    color: #ecf0f1;
-    margin-right: 10px;
-  }
+}
+.form-part4 textarea{
+  width: 60%;
+  padding: 2%;
+  border-radius: 5px;
+  font-size: large;
+  background-color: rgb(230, 224, 217);
+  margin-right: 3%;
+  height: 70px;
+}
+.option-label{
+  color:rgb(156, 214, 241)
+}
+.form-part input{
+  width: 50%;
+  padding: 3%;
+  border-radius: 15px;
+  font-size: larger;
+  background-color: rgb(236, 230, 221);
+}
+.ser-rec-submit{
+  background-color:  rgb(11, 18, 36);;
+  margin: 3%;
+  color: white;
+  border-radius: 20px;
+  padding: 1.5%;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 14%; 
+  height: 25%;
+  text-wrap: nowrap;
+  border: 2px solid orange;
+
+}
+
+.remove-button button:hover, .form-part4 button:hover{
   
-  .form-part input[type="text"] {
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: rgb(35, 42, 62);
-    border: 2px solid white;
-    border-radius: 18px;
-    color: #ecf0f1;
-  }
+  background-color: hwb(0 4% 96%);
   
-  .form-part input:focus {
-    outline: none;
-    border-color: orange;
-  }
-  
-  .form-container button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: none;
-    font-size: 16px;
-    color: white;
-    background-color: orange;
-    cursor: pointer;
-  }
-  
-  .form-container button:hover {
-    background-color: orange;
-  }
-  
-  .form-container button:active {
-    transform: translateY(1px);
-  }
-  
+}
+.ser-rec-submit:hover{
+  background-color:orange
+}

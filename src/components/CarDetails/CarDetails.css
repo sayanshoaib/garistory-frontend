@@ -138,7 +138,7 @@
   .carin:hover {background-color: orange;}
 
   
-    input[type = email] {
+    .input_form input[type = email] {
       width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -148,7 +148,7 @@
     border-radius: 18px;
     /* text-align: center; */
    }
-   input[type = textarea] {
+   input_form[type = textarea] {
     width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
