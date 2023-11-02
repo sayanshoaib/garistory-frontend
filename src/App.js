@@ -33,8 +33,8 @@ function App() {
           element: <Home></Home>,
           loader: async ({ params }) => {
             //return fetch(`/api/teams/${params.vehicleID}.json`);
-            return fetch("http://localhost:8080/vehicles");
-            // return fetch("get_car_data.json");
+            // return fetch("http://localhost:8080/vehicles");
+            return fetch("get_car_data.json");
           },
         },
         {
@@ -82,8 +82,8 @@ function App() {
         {
           path: "/vehicles",
           loader: async ({ params }) => {
-            return fetch("http://localhost:8080/vehicles");
-            // return fetch("get_car_data.json");
+            // return fetch("http://localhost:8080/vehicles");
+            return fetch("get_car_data.json");
           },
           element: <Vehicles></Vehicles>,
         },
@@ -107,8 +107,8 @@ function App() {
           path: "/VehicleDetails/:vehicleID",
           element: <CarDetails></CarDetails>,
           loader: async ({ params }) => {
-            return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
-            // return fetch("car_details.json");
+            // return fetch(`http://localhost:8080/vehicles/${params.vehicleID}`);
+            return fetch("car_details.json");
           },
         },
 
@@ -116,18 +116,18 @@ function App() {
           path: "/vehicles/:id/update",
           element: <UpdateVehicleForm></UpdateVehicleForm>,
           loader: async ({ params }) => {
-            return fetch(`http://localhost:8080/vehicles/${params.id}`);
-            // return fetch("car_details.json");
+            // return fetch(`http://localhost:8080/vehicles/${params.id}`);
+            return fetch("car_details.json");
           },
         },
 
         {
           path: "/service-center/update/:serviceCenterID",
           element: <UpdateServiceCenterReg></UpdateServiceCenterReg>,
-          // loader: async ({ params }) => {
+          loader: async ({ params }) => {
           //   return fetch(`http://localhost:8080/vehicles/${params.id}`);
-          //   // return fetch("car_details.json");
-          // },
+          return fetch("car_details.json");
+          },
         },
 
         // <Route path="/vehicles/:id/update" element={<UpdateVehicleForm />} />
