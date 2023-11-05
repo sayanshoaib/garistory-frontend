@@ -32,8 +32,7 @@ function App() {
           path: "/",
           element: <Home></Home>,
           loader: async ({ params }) => {
-            //return fetch(`/api/teams/${params.vehicleID}.json`);
-            // return fetch("http://localhost:8080/vehicles");
+           
             return fetch("get_car_data.json");
           },
         },
