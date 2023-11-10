@@ -1,0 +1,15 @@
+{
+  "contract": {
+    "abi": [
+      "event AccidentReportFiled(address insuranceCompany, string reportId, string driverName, string driverLicenseNumber, uint256 timestamp, string location, string description, string[] witnesses, string[] vehicleIds, string[] insuranceCompanies, bool isProcessed)",
+      "event servicingRecord(address indexed servicingCenter, string ownerEmail, uint256 indexed vin, string mechanicSignature, uint256 costOfService, uint8[] serviceType, uint8[] recommendedFutureServices, string[] partsUsed, uint256 mileage, uint256 odometerReading, string description, uint256 timestamp)",
+      "function fileAccidentReport(address _insuranceComapany, string _reportId, string _driverName, string _driverLicenseNumber, string _location, string _description, string[] _witnesses, string[] _vehicleIds, string[] _insuranceCompanies)",
+      "function getAccidentReports(address insuranceCompany) view returns (tuple(address insuranceCompany, string reportId, string driverName, string driverLicenseNumber, uint256 timestamp, string location, string description, string[] witnesses, string[] vehicleIds, string[] insuranceCompanies, bool isProcessed)[])",
+      "function getProcessedAccidentReports(address insuranceCompany) view returns (tuple(address insuranceCompany, string reportId, string driverName, string driverLicenseNumber, uint256 timestamp, string location, string description, string[] witnesses, string[] vehicleIds, string[] insuranceCompanies, bool isProcessed)[])",
+      "function getServicingHistory(address serviceCenter) view returns (tuple(address servicingCenter, string ownerEmail, string vin, string mechanicSignature, uint256 costOfService, uint8[] serviceType, uint8[] recommendedFutureServices, string[] partsUsed, uint256 mileage, uint256 odometerReading, string description, uint256 timestamp)[])",
+      "function getServicingHistoryByOwnerEmail(string ownerEmail) view returns (tuple(address servicingCenter, string ownerEmail, string vin, string mechanicSignature, uint256 costOfService, uint8[] serviceType, uint8[] recommendedFutureServices, string[] partsUsed, uint256 mileage, uint256 odometerReading, string description, uint256 timestamp)[])",
+      "function processAccidentReport(address insuranceCompany, string reportId)",
+      "function recordServicing(string _ownerEmail, string _vin, string _mechanicSignature, uint256 _costOfService, uint8[] _serviceType, uint8[] _recommendedFutureServices, string[] _partsUsed, uint256 _mileage, uint256 _odometerReading, string _description)"
+    ]
+  }
+}
