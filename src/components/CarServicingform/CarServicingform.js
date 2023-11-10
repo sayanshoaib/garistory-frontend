@@ -1,21 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import "./CarServicingform.css"
+import Web3 from 'web3';
+import ContractABI from './ConractABI';
 
 const CarServicingform = () => {
-  const [mileage, setMileage] = useState("");
+  const [mileage, setMileage] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
   const [servicingCenterSignature, setServicingCenterSignature] = useState("");
-
   const [ownerEmail, setOwnerEmail] = useState("");
   const [vin, setVin] = useState("");
   const [odometerReading, setOdometerReading] = useState(0);
-
   const [serviceType, setServiceType] = useState([]); // Array of uint8
   const [partsUsedInput, setPartsUsedInput] = useState(""); // Input for parts names
   const [partsUsed, setPartsUsed] = useState([]); // Array of strings for parts used
   const [FutureRecomendedService, setFutureRecomendedService] = useState([]); // Array of uint8
   const [description, setDescription] = useState("");
 
+  const contractAddress = '0xd9145CCE52D386f254917e481eB44e9943F39138';
+
+
+  const [web3, setWeb3] = useState(null);
+  const [contract, setContract] = useState(null)
+
+  useEffect(() => {
+    if (typeof window.ethereum !== 'undefined') {
+      const web3Instance = new Web3(window.ethereum);
+      window.ethereum.enable() // Request user's permission to connect
+        .then(() => {
+          const contractInstance = new web3Instance.eth.Contract(ContractABI, contractAddress);
+          setWeb3(web3Instance);
+          setContract(contractInstance);
+        })
+        .catch((error) => {
+          console.error('Failed to connect to MetaMask:', error);
+        });
+    }
+  }, []);
   // Define serviceTypeMap and recommendedServiceMap
   const serviceTypeMap = {
     OIL_CHANGE: 0,
@@ -37,26 +57,52 @@ const CarServicingform = () => {
     ALIGNMENT: 6,
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform any necessary actions with the form data
-    // For example, you can send it to the backend or perform validations
+    if (!web3 || !contract) {
+      alert('Web3 and contract not initialized. Please install a compatible Ethereum wallet.');
+      return;
+    }
 
-    // Clear form fields
-    setMileage("");
-    setTotalCost(0);
-    setServicingCenterSignature("");
-    setOwnerEmail("");
-    setVin("");
-    setOdometerReading(0);
-    setServiceType([]);
-    setPartsUsed([]);
-    setFutureRecomendedService([]);
-    setDescription("");
-    setPartsUsedInput("");
-    setPartsUsed([]);
+    try {
+      const accounts = await web3.eth.getAccounts();
+      console.log("Connected account:", accounts[0]);
+      // Send a transaction to the contract to store the data
+      await contract.methods
+        .storeFormData(
+          ownerEmail,
+          vin,
+          mileage,
+          odometerReading,
+          servicingCenterSignature,
+          serviceType,
+          partsUsed,
+          FutureRecomendedService,
+          description
+        )
+        .send({ from: accounts[0] });
+      console.log('Data stored in the smart contract');
+
+      // Clear form fields
+      setMileage(0);
+      setTotalCost(0);
+      setServicingCenterSignature('');
+      setOwnerEmail('');
+      setVin('');
+      setOdometerReading(0);
+      setServiceType([]);
+      setPartsUsed([]);
+      setFutureRecomendedService([]);
+      setDescription('');
+      // Clear other form fields...
+
+      console.log('Data stored in the smart contract');
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+
   const addParts = () => {
     // Add the entered parts name to the partsUsed array
     setPartsUsed([...partsUsed, partsUsedInput]);
@@ -102,7 +148,7 @@ const CarServicingform = () => {
                 <div className="form-field">
                   <label htmlFor="mileage">Mileage:</label>
                   <input
-                    type="text"
+                    type="number"
                     id="mileage"
                     value={mileage}
                     onChange={(e) => setMileage(e.target.value)}
@@ -209,9 +255,9 @@ const CarServicingform = () => {
             </div>
           </div>
 
-          
+
           <div className='case6'>
-          <h2>Cost and Validation</h2>
+            <h2>Cost and Validation</h2>
             <div className="form-part5">
               <div className="form-field">
                 <label htmlFor="totalCost">Total Cost:</label>
